@@ -1,63 +1,415 @@
+
 <!DOCTYPE html>
+<!-- Website styles inspired by Michael Bernstein https://hci.stanford.edu/msb/ and Anhong Guo http://www.guoanhong.com/ -->
 <html lang="en">
 <head>
-<title>CSS Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yan Chen is a third year PhD student at School of Information, University of Michigan, Ann Arbor, advised by Professor Walter S. Lasecki and Professor Steve Oney.">
+    <meta name="author" content="Yan Chen">
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    <title>Yan Chen - Human-Computer Interaction Researcher at University of Michigan</title>
 
-/* Style the top navigation bar */
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/yanchen.css" rel="stylesheet">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <base target="_blank">
 
-/* Style the topnav links */
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+    <!-- javascript includes are at the bottom of the document -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
-/* Change color on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-98899335-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 
 
-/* Style the footer */
-.footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-</style>
+
 </head>
+
 <body>
+    <div id="topbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="." target="_self">Yan Chen</a>
+            </div>
+        </div>
+    </div>
 
-<div class="topnav">
-  <a href="#">Home</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-9">
+                        <img src="files/yanchen.jpg" class="img-responsive" style="margin-bottom: 10px;">
+                    </div> <!-- /col-md-4 -->
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <p class="lead"><font size="4"> I am a PhD student at University of Michigan. My research aims to leverage human computation and machine intelligence to effectively solve complex tasks that require domain expertise, such as software development, video curation. I study problems that users face with existing tools and methods, and build computational systems to assist users via efficient collaboration and hybrid crowd-machine workflow. My advisors are <a href="http://web.eecs.umich.edu/~wlasecki/" style="color: orange">Dr. Walter S. Lasecki</a> and <a href="http://www.from.so" style="color: orange">Dr. Steve Oney</a>.
+
+                          <!-- My research aims to leverage machine intelligence and crowd with different expertise to solve complex tasks such as video/image augmenting, programming support than they could be solved with existing methods. I also explore how to coordinate the crowd with different levels of expertise to accomplish complex tasks more efficiently. I have built systems like <a href='lab_page/cromalab.html' style="color: orange">Codeon</a> that enables more effective task hand-off between developers and remote helpers by allowing asynchronous responses to on-demand requests, or like BashOn a crowd-machine hybrid intelligence system that translates natural language queries to bash command.</font> -->
+                        </p>
+                        <!-- <p>
+                          <b> Research Overview: <a href="files/research.pdf">[pdf]</a> </b>
+                        </p> -->
+                        <!-- through designing, developing and deploying end-to-end hybrid crowd-AI interactive systems -->
+                    </div> <!-- /col-md-8 -->
+                </div> <!-- row -->
+                <!-- <div class="bio">
+                  <p>Yan Chen is a doctoral student at <a href="http://si.umich.edu" style="color: orange">School of Information</a>, <a href="http://umich.edu" style="color: orange">University of Michigan</a>, advised by <a href="http://web.eecs.umich.edu/~wlasecki/" style="color: orange">Dr. Walter S. Lasecki</a> and <a href="http://www.from.so" style="color: orange">Dr. Steve Oney</a>. He is a member of <a href="http://web.eecs.umich.edu/~wlasecki/croma.html" style="color: orange">CromaLab</a> and <a href="http://misc.si.umich.edu/" style="color: orange">MISC</a>, and his research work has been published multiple times on top academic conference (CHI). He interned at <a href="https://www.snap.com/en-US/" style="color: orange">Snap Research</a>. </p>
+                </div> -->
+                <br><br>
+
+                <div class="row" style="margin-bottom:20px;">
+                    <div class="col-md-12">
+                        <p class="lead" style="margin-bottom:5px;">News</p>
+                        <div>
+                            <div class="date col-md-3">October, 2019</div>
+                            <div class="col-md-8">VL/HCC, Memphis, Tennessee</div>
+                        </div>
+                    </div>
+                </div>
+
+<br><br>
+
+                <div class="row">
+                  <div class="col-md-12"><p class="lead">Publications</p></div>
+                </div>
+
+<!-- No indent for publications -->
+<div class="papers" id="papers">
+
+<div class='row paper-row'  id='2017' >
+  <div class='col-md-3 col-xs-4'>
+    <a href='papers/CHI2017.pdf'>
+      <img class='paperimage img img-responsive' src='files/codeon_pic.png' />
+    </a>
+  </div>
+  <div class='col-md-9 col-xs-8'>
+    <div>
+      <a href='papers/CHI2017.pdf' data-title="Codeon">Codeon: On-Demand Software Development Assistance.</a>
+    </div>
+    <div>
+      <b>Yan Chen</b>, Sang Won Lee, Yin Xie, YiWei Yang, Walter Lasecki, and Steve Oney.
+    </div>
+    <div>CHI&nbsp;Full Paper&nbsp;2017</div>
+    <div>
+      <a href='papers/CHI2017.pdf'>pdf</a>&nbsp;&middot;&nbsp;
+      <a href='https://www.youtube.com/watch?v=gDW3hK3YlP0&t=2s'>full video</a>&nbsp;&middot;&nbsp;
+      <a href='https://www.youtube.com/watch?v=NVuUNak28T8'>30s preview</a>&nbsp;&middot;&nbsp;
+      <a href="javascript:;" onClick="
+        if (document.getElementById('chi17-bib').style.display == 'block') {
+          document.getElementById('chi17-bib').style.display='none';
+        } else {
+          document.getElementById('chi17-bib').style.display='block';
+        }
+      ">
+        <span style="font-size:large;">BibTeX</span>
+      </a>
+      <div id='chi17-bib' style='border-style: inset; background: white; display: none'>
+        <pre>@inproceedings{chen2017codeon,
+  title={Codeon: On-demand software development assistance},
+  author={Chen, Yan and Lee, Sang Won and Xie, Yin and Yang, YiWei and Lasecki, Walter S and Oney, Steve},
+  booktitle={Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems},
+  pages={6220--6231},
+  year={2017},
+  organization={ACM}
+}</pre>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="content">
-  <h2>Welcome to my homepage!</h2>
-  <img style='width: 262px; height: 312px;' src="./yanchen.jpg"/>
-  <p>Yan Chen is a doctoral student at School of Information, University of Michigan, advised by Dr. Walter S. Lasecki and Dr. Steve Oney. He is a member of CromaLab and MISC, and his research work has been published multiple times on top academic conference (CHI). He holds a bachelor's degree in Applied Mathematics and Electrical and Computer Engineering, and a master's in Applied Mathematics all from University of Colorado at Boulder.</p>
+
+<div class='row paper-row'  id='2016'>
+   <div class='col-md-3 col-xs-4'>
+     <a href='papers/CHI2016.pdf'>
+       <img class='paperimage img img-responsive' src='files/chi2016_img.jpg' />
+     </a>
+   </div>
+   <div class='col-md-9 col-xs-8'>
+      <div><a href='papers/CHI2016.pdf'>Towards Providing On-Demand Expert Support for Software Developers</a></div>
+      <div><b>Yan Chen</b>, Steve Oney and Walter Lasecki.</div>
+      <div>CHI&nbsp;Full Paper&nbsp;2016</div>
+      <div>
+        <a href='papers/CHI2016.pdf'>pdf</a>&nbsp;&middot;&nbsp;
+        <a href='http://dx.doi.org/10.1145/2858036.2858512'>ACM DL</a>&nbsp;&middot;&nbsp;
+        <a href='https://www.youtube.com/watch?v=RmNuqO4tOyc'>30s preview</a>&nbsp;&middot;&nbsp;
+        <a href='https://www.youtube.com/watch?v=1h1Otov-26c'>talk</a>&nbsp;&middot;&nbsp;
+        <a href="javascript:;" onClick="
+          if (document.getElementById('chi16-bib').style.display == 'block') {
+            document.getElementById('chi16-bib').style.display='none';
+          } else {
+            document.getElementById('chi16-bib').style.display='block';
+          }
+        ">
+        <span style="font-size:large;">BibTeX</span>
+      </a>
+      <div id='chi16-bib' style='border-style: inset; background: white; display: none'>
+        <pre>@inproceedings{chen2016towards,
+  title={Towards providing on-demand expert support for software developers},
+  author={Chen, Yan and Oney, Steve and Lasecki, Walter S},
+  booktitle={Proceedings of the 2016 CHI conference on human factors in computing systems},
+  pages={3192--3203},
+  year={2016},
+  organization={ACM}
+}</pre>
+</div>
+      </div>
+   </div>
 </div>
 
-</body>
+<div class='row paper-row'  id='2016'>
+   <div class='col-md-3 col-xs-4'>
+     <a href='papers/CI2016.pdf'>
+       <img class='paperimage img img-responsive' src='files/3studies.png' />
+     </a>
+   </div>
+   <div class='col-md-9 col-xs-8'>
+      <div><a href='papers/CI2016.pdf'>Expert Crowd Support Systems for Software Developers</a></div>
+      <div><b>Yan Chen</b>, Steve Oney and Walter Lasecki.</div>
+      <div>Collective Intelligence 2016</div>
+      <div>
+        <a href='papers/CI2016.pdf'>pdf</a>&nbsp;&middot;&nbsp;
+        <a href="javascript:;" onClick="
+          if (document.getElementById('ci16-bib').style.display == 'block') {
+            document.getElementById('ci16-bib').style.display='none';
+          } else {
+            document.getElementById('ci16-bib').style.display='block';
+          }
+        ">
+        <span style="font-size:large;">BibTeX</span>
+      </a>
+      <div id='ci16-bib' style='border-style: inset; background: white; display: none'>
+        <pre>@inproceedings{chen2016expert,
+  title={Expert Crowd Support Systems for Software Developers},
+  author={CHEN, YAN and ONEY, STEVE and LASECKI, WALTER S},
+  booktitle={Collective Intelligence},
+  year={2016}
+}</pre>
+</div>
+      </div>
+    </div>
+</div>
+
+</div>
+
+<!-- <div class='row paper-row'  id='2017'>
+   <div class='col-md-3 col-xs-4'>
+     <a href='papers/HCOMP17_Poster.pdf'>
+       <img class='paperimage img img-responsive' src='files/hcomp17.png' />
+     </a>
+   </div>
+   <div class='col-md-9 col-xs-8'>
+      <div><a href='papers/HCOMP17_Poster.pdf'>The Need for Real-Time Crowd Generation of Task Lists from Speech</a></div>
+      <div>Sang Lee, <b>Yan Chen</b>, and Walter S. Lasecki.</div>
+      <div>HCOMP&nbsp;WIP&nbsp;2017</div>
+      <div>
+        <a href='papers/HCOMP17_Poster.pdf'>pdf</a>&nbsp;&nbsp;
+      </div>
+   </div>
+</div>
+
+<div class='row paper-row'  id='2017'>
+ <div class='col-md-3 col-xs-4'>
+   <a href='papers/CHI2017_LBW.pdf'>
+     <img class='paperimage img img-responsive' src='files/chi2017_lbw.png' />
+   </a>
+ </div>
+ <div class='col-md-9 col-xs-8'>
+    <div><a href='papers/CHI2017_LBW.pdf'>Exploring Coordination Models for Ad Hoc Programming Teams</a></div>
+    <div>Sang Lee, <b>Yan Chen</b>, Noah Klugman, Sai R. Gouravajhala, Angela Chen, and Walter S. Lasecki.</div>
+    <div>CHI&nbsp;LBW&nbsp;2017</div>
+    <div>
+      <a href='papers/CHI2017_LBW.pdf'>pdf</a>&nbsp;&nbsp;
+    </div>
+ </div>
+</div> -->
+
+<!--
+<div class='row paper-row'  id='2016'>
+   <div class='col-md-3 col-xs-4'>
+     <a href='papers/CHI2016WS.pdf'>
+       <img class='paperimage img img-responsive' src='files/microproductivity.jpg' />
+     </a>
+   </div>
+   <div class='col-md-9 col-xs-8'>
+      <div><a href='papers/CHI2016WS.pdf'>Towards Software Development Microtasks</a></div>
+      <div><b>Yan Chen</b>, Steve Oney and Walter Lasecki.</div>
+      <div>CHI&nbsp;Workshop&nbsp;2016</div>
+      <div>
+        <a href='papers/CHI2016WS.pdf'>pdf</a>
+      </div>
+    </div>
+</div> -->
+
+
+
+<!-- <div class='row paper-row'  id='2016'>
+   <div class='col-md-3 col-xs-4'>
+     <a href='papers/MobileHCI14.pdf'>
+       <img class='paperimage img img-responsive' src='files/screen_fingerprint.png' />
+     </a>
+   </div>
+   <div class='col-md-9 col-xs-8'>
+      <div><a href='papers/MobileHCI14.pdf'>Toward a Non-Intrusive, Physio-Behavioral Biometric for Smartphones</a></div>
+      <div>Esther Vasiete, <b>Yan Chen</b>, Ian Char, Tom Yeh, Vishal Patel, Larry Davis, and Rama Chellappa.</div>
+      <div>Mobile HCI&nbsp;Poster&nbsp;2014</div>
+      <div>
+        <a href='papers/MobileHCI14.pdf'>pdf</a>&nbsp;&middot;&nbsp;
+        <a href='http://dl.acm.org/citation.cfm?doid=2628363.2634223'>ACM DL</a>
+
+      </div>
+    </div>
+</div> -->
+
+<!-- <div class='row paper-row'  id='2016'>
+   <div class='col-md-3 col-xs-4'>
+     <a href='papers/itcomputing2013.pdf'>
+       <img class='paperimage img img-responsive' src='files/it_professional.jpg' />
+     </a>
+   </div>
+   <div class='col-md-9 col-xs-8'>
+      <div><a href='papers/itcomputing2013.pdf'>Screen Fingerprints: a Novel Modality for Active Authentication.</a></div>
+      <div>Vishal Patel, Tom Yeh, M Salem, Yangmuzi Zhang, <b>Yan Chen</b>, Rama Chellappa, Larry Davis.</div>
+      <div>IT Professional&nbsp;2013</div>
+      <div>
+        <a href='papers/itcomputing2013.pdf'>pdf</a>&nbsp;&middot;&nbsp;
+        <a href='http://ieeexplore.ieee.org/document/6559984/?tp=&arnumber=6559984'>IEEE</a>
+
+      </div>
+    </div>
+</div> -->
+
+<!-- <div class="row">
+  <div class="col-md-12"><p class="lead">Manuscript</p></div>
+</div>
+
+<div class='row paper-row'  id='2016'>
+   <div class='col-md-3 col-xs-4'>
+     <a href='papers/Royal_society_A.pdf'>
+       <img class='paperimage img img-responsive' src='files/oscillation.png' />
+     </a>
+   </div>
+   <div class='col-md-9 col-xs-8'>
+      <div><a href='papers/Royal_society_A.pdf'>Oscillations in hyperasymptotic series.</a></div>
+      <div><b>Yan Chen</b>, Harvey Segur</div>
+      <div>Proceedings of the Royal Society of London. Series A, Mathematical and Physical Sciences. </div>
+      <div>
+        <a href='papers/Royal_society_A.pdf'>pdf</a>
+      </div>
+    </div>
+</div> -->
+
+<br><br><br>
+                </div> <!-- /col-md-9 -->
+
+                <div class="col-md-3">
+                    <div class="vital-info" style="margin-top: 0;">
+                        <div><a href="https://www.si.umich.edu/people/yan-chen-0">Ph.D. Student</a></div>
+                        <div><a href="https://si.umich.edu/">School of Information</a></div>
+                        <div><a href="https://umich.edu/">University of Michigan</a></div>
+                    </div>
+
+                    <hr>
+
+                    <div class="vital-info">
+                        <div><a href="files/yanchen.pdf">Curriculum vitae</a></div>
+                        <div><a href="https://scholar.google.com/citations?user=UOv-ce4AAAAJ&hl=en">Google Scholar</a></div>
+                        <div>Email: <a id="mail-link" href="mailto:yanchenm@umich.edu">yanchenm@umich.edu</a></div>
+                    </div>
+<!--
+                    <hr>
+
+                    <div class="vital-info">
+                        <h4>Travel</h4>
+                        <div>
+                            <div class="row ">
+                                <div class="date col-md-7">May 6-11, 2017</div>
+                                <div class="col-md-5"><a href="https://chi2017.acm.org/">CHI</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Oct 24-26, 2016</div>
+                                <div class="col-md-5"><a href="https://assets16.sigaccess.org/">ASSETS</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Oct 16-19, 2016</div>
+                                <div class="col-md-5"><a href="https://uist.acm.org/uist2016/">UIST</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Sep 6-9, 2016</div>
+                                <div class="col-md-5"><a href="https://mobilehci.acm.org/2016/">MobileHCI</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Jun 26-30, 2016</div>
+                                <div class="col-md-5"><a href="http://hcic.org/hcic2016/index.phtml">HCIC</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">May 7-12, 2016</div>
+                                <div class="col-md-5"><a href="https://chi2016.acm.org/">CHI</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Mar 21-23, 2016</div>
+                                <div class="col-md-5"><a href="https://www.qualcomm.com/invention/research/university-relations/innovation-fellowship">Qualcomm</a></div>
+                            </div>
+
+                            <!-- <div class="row olddate">
+                                <div class="date col-md-7">Nov 15-18, 2015</div>
+                                <div class="col-md-5"><a href="http://iss.acm.org/2015/">ITS</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Nov 8-11, 2015</div>
+                                <div class="col-md-5"><a href="https://uist.acm.org/uist2015/about">UIST</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">May - Aug, 2015</div>
+                                <div class="col-md-5"><a href="https://www.microsoft.com/en-us/research/">MSR</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Apr 18-23, 2015</div>
+                                <div class="col-md-5"><a href="https://chi2015.acm.org/">CHI</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Oct 20-22, 2014</div>
+                                <div class="col-md-5"><a href="http://assets14.sigaccess.org/">ASSETS</a></div>
+                            </div>
+
+                            <div class="row olddate">
+                                <div class="date col-md-7">Sep 13-17, 2014</div>
+                                <div class="col-md-5"><a href="http://www.iswc.net/iswc14/">ISWC</a></div>
+                            </div> -->
+                        <!-- </div>
+                    </div>  -->
+                </div>
+            </div> <!-- /row -->
+
+        </div> <!-- /container -->
+
+        <!-- ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
 </html>
