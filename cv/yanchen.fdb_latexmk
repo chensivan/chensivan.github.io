@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1581435501 "yanchen.tex" "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.pdf" "yanchen" 1581435502
+["pdflatex"] 1581435629 "yanchen.tex" "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.pdf" "yanchen" 1581435630
   "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.aux" 1581435421 8 a94a2480d3289e625eea47cd1b285758 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -76,9 +76,9 @@
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
   "res.cls" 1332904920 25109 4aaddbc00695c74cbaf6137679c86a6e ""
   "yanchen.aux" 1581435421 8 a94a2480d3289e625eea47cd1b285758 ""
-  "yanchen.tex" 1581435500 15584 05dfd8e3202dbd0698730a77a14f3747 ""
+  "yanchen.tex" 1581435629 15645 1adf6a3f4dd2a9cc0211c9d422e4a39f ""
   (generated)
   "yanchen.log"
+  "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.log"
   "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.pdf"
   "yanchen.pdf"
-  "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.log"
