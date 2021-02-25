@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="container">
-    <!-- <button class='btn btn-outline-primary btn-lg'
+    <!-- <button id='topbutton' class='btn btn-outline-primary btn-lg'
       style='background-color: pink; position: fixed; width: 140px; right: 40px; bottom: 50px;'>Top</button> -->
     <!-- Bio, social media and contact information -->
     <div class="row">
@@ -108,6 +108,13 @@
           <div>Email: <a id="mail-link" href="mailto:yanchen@dgp.toronto.edu">yanchen@dgp.toronto.edu</a></div>
           <div>Twitter: <a id="mail-link" href="https://twitter.com/yanchenum">@yanchenum</a></div>
         </div>
+
+        <hr>
+        <div class="vital-info">
+          <p class="lead" style="margin-bottom:5px;"><b>Billboard</b></p>
+          <div>The DGP is recruiting speakers for Spring 2021. Email Yan if you are interested in presenting.</div>
+        </div>
+
       </div>
     </div>
 
@@ -143,7 +150,7 @@
       <div class="col-md-12">
         <p class="lead" style="margin-bottom:5px;"><b>News</b></p>
         <div>
-          <div class="date col-md-3">Feb, 2020</div>
+          <div class="date col-md-3">Feb, 2021</div>
           <div class="col-md-8">Invited to be a VL/HCC 2021 PC member.</div>
         </div>
         <!-- <div>
@@ -712,6 +719,65 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(() => {
+      var a = [
+        2295, 1612740991702,
+        2281, 1612740991734,
+        2236, 1612740991760,
+        2176, 1612740991788,
+        2090, 1612740991834,
+        1907, 1612740991857,
+        1798, 1612740991885,
+        1653, 1612740991909,
+        1519, 1612740991935,
+        1369, 1612740991957,
+        1238, 1612740991979,
+        1105, 1612740991999,
+        986, 1612740992019,
+        868, 1612740992037,
+        770, 1612740992055,
+        664, 1612740992071,
+        579, 1612740992090,
+        487, 1612740992106,
+        407, 1612740992126,
+        319, 1612740992143,
+        252, 1612740992157,
+        201, 1612740992172,
+        153, 1612740992189,
+        106, 1612740992206,
+        67, 1612740992223,
+        37, 1612740992241,
+        15, 1612740992260,
+        1, 1612740992279,
+        0, 1612740992296
+      ]
+
+
+
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      };
+
+      async function delayedGreeting() {
+        let scrollTop = window.scrollY;
+        let docHeight = document.body.offsetHeight;
+        let winHeight = window.innerHeight;
+        scrollPercent = (scrollTop / (docHeight - winHeight)).toString();
+        let scrollPercentRounded = Math.round(scrollPercent * 100);
+        console.log(scrollPercentRounded, new Date().getTime());
+        for (var i = 2; i < a.length; i += 2) {
+          document.documentElement.scrollTop = a[i]
+          var tempTime = a[i + 1] - a[i - 1]
+          console.log(a[i], tempTime)
+          await sleep(tempTime);
+        }
+      }
+      $("#topbutton").click(() => {
+        // delayedGreeting()
+      })
+    })
+  </script>
 </body>
 
 </html>
