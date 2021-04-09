@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1618002206 "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.tex" "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.pdf" "yanchen" 1618002207
+["pdflatex"] 1618002359 "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.tex" "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.pdf" "yanchen" 1618002360
   "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.aux" 1592436824 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.tex" 1618002205 19859 46f328dbc4b61e4b12935a37a8629292 ""
+  "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.tex" 1618002358 19875 79be5178c85bb4cbc045a8cbd7b81a5a ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
@@ -77,9 +77,9 @@
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
   "res.cls" 1332904920 25109 4aaddbc00695c74cbaf6137679c86a6e ""
   "yanchen.aux" 1592436824 8 a94a2480d3289e625eea47cd1b285758 ""
-  "yanchen.tex" 1618002205 19859 46f328dbc4b61e4b12935a37a8629292 ""
+  "yanchen.tex" 1618002358 19875 79be5178c85bb4cbc045a8cbd7b81a5a ""
   (generated)
-  "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.log"
-  "yanchen.pdf"
   "yanchen.log"
+  "yanchen.pdf"
   "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.pdf"
+  "/Users/yanchenm/Dropbox/dev/chensivan.github.io/cv/yanchen.log"
