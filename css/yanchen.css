@@ -16,7 +16,7 @@ body {
 
 a,
 a:hover {
-  color: #bb0000;
+  color: #337ab7;
 }
 
 p {
@@ -32,7 +32,7 @@ p {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #b10000;
+  background-color: #337ab7;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
@@ -78,8 +78,11 @@ p {
 }
 
 .paperimage {
+  border-radius: 4px;
   width: 100%;
   overflow: hidden;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09); */
 }
 
 .papers .paper-row {
