@@ -92,8 +92,8 @@
                     >Tovi Grossman</a
                   >. I received my Ph.D., advised by <a class='paperimage' href="https://from.so/" 
                   >Steve Oney</a>, from the University 
-                  of Michigan School of Information in 2020. My research theme is
-                  <b>On-Demand Programming Assistance</b>. In
+                  of Michigan School of Information. I study and create programming support systems to improve 
+                  people's performance in software development and programming learning. In
                   particular, my research in human-computer interaction (HCI)
                   studies challenges that computer programmers at all levels of
                   expertise face when using existing tools and methods to seek
@@ -306,7 +306,18 @@
                 <a href="https://youtu.be/XKciHmH_gZs">5 min system demo</a> |
                 <a href="https://dl.acm.org/doi/10.1145/3472749.3474796"
                   >ACM link</a
-                >]
+                > | <a 
+                style="cursor: pointer;"
+
+                onClick="if
+                        (document.getElementById('uist21-ane').style.display ==
+                        'block') {
+                        document.getElementById('uist21-ane').style.display='none';
+                        } else {
+                        document.getElementById('uist21-ane').style.display='block';
+                        }"
+                
+                >Anecdotes</a>]
               </div>
               <div>
                 <p class="paper-description">
@@ -315,6 +326,19 @@
                   with a trigger-object-response framework.
                 </p>
               </div>
+
+              <div
+                  id="uist21-ane"
+                  style="border-style: none; background: white; display: none"
+                >
+                Umitation enables web developers to perform "copy-and-paste"
+                (retarget) interaction on web front-end UI behaviors
+                with a trigger-object-response framework.Umitation enables web developers to perform "copy-and-paste"
+                (retarget) interaction on web front-end UI behaviors
+                with a trigger-object-response framework.Umitation enables web developers to perform "copy-and-paste"
+                (retarget) interaction on web front-end UI behaviors
+                with a trigger-object-response framework. 
+                </div>
             </div>
           </div>
           <!-- 1st paper end -->
@@ -638,6 +662,7 @@
                 >
                 |
                 <a
+                  style="cursor: pointer;"
                   onClick="if
                           (document.getElementById('chi17-bib').style.display ==
                           'block') {
@@ -646,29 +671,30 @@
                           document.getElementById('chi17-bib').style.display='block';
                           }"
                 >
-                  <span style="font-size: large">BibTeX</span> </a
+                  BibTeX </a
                 >]
-                <div
-                  id="chi17-bib"
-                  style="border-style: inset; background: white; display: none"
-                >
-                  <pre>
-@inproceedings{chen2017codeon,
-                      title={Codeon: On-demand software development assistance},
-                      author={Chen, Yan and Lee, Sang Won and Xie, Yin and Yang, YiWei and Lasecki, Walter S and Oney, Steve},
-                      booktitle={Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems},
-                      pages={6220--6231},
-                      year={2017},
-                      organization={ACM}
-                    }</pre
-                  >
-                </div>
+                
                 <div>
                   <p class="paper-description">
                     CodeOn enables effective task hand-offs between developers
                     and remote helpers by allowing asynchronous responses to
                     on-demand requests.
                   </p>
+                </div>
+                <div
+                  id="chi17-bib"
+                  style="border-style: none; background: white; display: none"
+                >
+                  <pre>
+@inproceedings{chen2017codeon,
+  title={Codeon: On-demand software development assistance},
+  author={Chen, Yan and Lee, Sang Won and Xie, Yin and Yang, YiWei and Lasecki, Walter S and Oney, Steve},
+  booktitle={Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems},
+  pages={6220--6231},
+  year={2017},
+  organization={ACM}
+}</pre
+                  >
                 </div>
               </div>
             </div>
@@ -741,6 +767,8 @@
                 |
                 <a href="https://www.youtube.com/watch?v=1h1Otov-26c">talk</a> |
                 <a
+                style="cursor: pointer;"
+
                   onClick="if
                           (document.getElementById('chi16-bib').style.display ==
                           'block') {
@@ -749,7 +777,7 @@
                           document.getElementById('chi16-bib').style.display='block';
                           }"
                 >
-                  <span style="font-size: large">BibTeX</span> </a
+                  BibTeX </a
                 >]
                 <div
                   id="chi16-bib"
