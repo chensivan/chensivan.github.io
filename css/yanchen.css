@@ -16,7 +16,7 @@ body {
 
 a,
 a:hover {
-  color: #337ab7;
+  color: #1fa9d5ff;
 }
 
 p {
@@ -32,7 +32,7 @@ p {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #337ab7;
+  background-color: #872747;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
@@ -40,7 +40,7 @@ p {
 }
 
 #topbar .navbar-brand {
-  color: blue;
+  color: #872747;
   font-size: 2.3em;
   /*font-family: 'Open Sans',Helvetica,sans-serif;*/
   font-weight: 400;
@@ -57,7 +57,7 @@ p {
 }
 
 #topbar .navbar-brand a:hover {
-  color: #f5f5f5;
+  color: #872747;
   text-decoration: none;
 }
 
