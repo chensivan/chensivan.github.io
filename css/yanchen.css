@@ -104,7 +104,9 @@ p {
   text-align: center;
   font-size: 14px;
 }
-
+.phd_student {
+  height: 200px;
+}
 .vital-info h4 {
   margin-bottom: 5px;
 }
