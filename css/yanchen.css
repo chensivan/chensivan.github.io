@@ -128,3 +128,7 @@ p {
   margin-left: 0px;
   margin-right: 0px;
 }
+.lead {
+  font-size: 28px;
+  font-family: serif;
+}
