@@ -1,8 +1,8 @@
-PWD /Users/chenyan/Dropbox (Personal)/dev/chensivan.github.io/cv
+PWD /Users/chenyan/Dropbox/dev/chensivan.github.io/cv
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/chenyan/Dropbox (Personal)/dev/chensivan.github.io/cv/yanchen.tex
+INPUT /Users/chenyan/Dropbox/dev/chensivan.github.io/cv/yanchen.tex
 OUTPUT yanchen.log
 INPUT ./res.cls
 INPUT ./res.cls
