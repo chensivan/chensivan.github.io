@@ -14,6 +14,7 @@ body {
   font-size: 15px;
 }
 
+
 a,
 a:hover {
   color: #1fa9d5ff;
@@ -38,8 +39,8 @@ p {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #872747;
-  background-image: none;
+  background-color: #ef7d1f;
+  background-image: linear-gradient(to right, #ef7d1f, #872747);
   background-repeat: no-repeat;
   filter: none;
   border-color: 0;
@@ -131,4 +132,32 @@ p {
 .lead {
   font-size: 28px;
   font-family: serif;
+}
+
+.particle-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.particle-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #0000ff, #00ff00);
+  mask-image: url("data:image/svg+xml,%3Csvg width='200' height='5' viewBox='0 0 200 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2.5c5 0 5-2 10-2s5 2 10 2 5-2 10-2 5 2 10 2 5-2 10-2 5 2 10 2 5-2 10-2 5 2 10 2 5-2 10-2 5 2 10 2 5-2 10-2 5 2 10 2 5-2 10-2 5 2 10 2 5-2 10-2 5 2 10 2 5-2 10-2 5 2 10 2 5-2 10-2 5 2 10 2' fill='%23000' fill-rule='evenodd'/%3E%3C/svg%3E");
+  mask-size: 200% 100%;
+  animation: moveParticles 2s linear infinite;
+}
+
+@keyframes moveParticles {
+  0% {
+    mask-position: 100% 0;
+  }
+
+  100% {
+    mask-position: -100% 0;
+  }
 }
