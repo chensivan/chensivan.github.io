@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparing the Argus Interface with an Optimized Interface for CEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --ink: #1a1a18;
+      --accent: #2d6a4f;
+      --accent-light: #b7e4c7;
+      --muted: #6b6b60;
+      --rule: #d4cfc6;
+      --highlight: #e9f5ee;
+      --tag-bg: #2d6a4f;
+      --tag-text: #fff;
+      --card-bg: #ffffff;
+      --caption: #8a8a7e;
+      --pullquote-border: #2d6a4f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 17px;
+    }
+
+    /* Header / Hero */
+    .hero {
+      background: var(--ink);
+      color: #f7f5f0;
+      padding: 72px 24px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(45, 106, 79, 0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 600;
+      line-height: 1.22;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      color: #f7f5f0;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 32px;
+      font-size: 14px;
+      color: #b0ae9e;
+    }
+
+    .hero-meta strong {
+      color: #f7f5f0;
+      font-weight: 500;
+    }
+
+    .hero-meta a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    .hero-meta a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    article {
+      padding: 56px 0 80px;
+    }
+
+    h2 {
+      font-family: 'Lora', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 52px 0 16px;
+      padding-top: 8px;
+      border-top: 2px solid var(--rule);
+    }
+
+    h2:first-child {
+      margin-top: 0;
+      border-top: none;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: #2a2a26;
+    }
+
+    /* Pull quote */
+    .pullquote {
+      border-left: 4px solid var(--accent);
+      margin: 36px 0;
+      padding: 12px 28px;
+      background: var(--highlight);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .pullquote p {
+      font-family: 'Lora', serif;
+      font-size: 19px;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    /* Figure */
+    .figure-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 36px 0 8px;
+    }
+
+    @media (max-width: 580px) {
+      .figure-group {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .figure {
+      margin: 36px 0 8px;
+    }
+
+    .figure img,
+    .figure-group .fig-item img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--rule);
+      display: block;
+    }
+
+    .fig-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    figcaption,
+    .fig-caption {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--caption);
+      line-height: 1.55;
+      margin-top: 10px;
+      padding: 0 2px;
+    }
+
+    .fig-label {
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .figure-wrapper {
+      margin: 40px 0;
+    }
+
+    .figure-wrapper .figure-caption-main {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Findings cards */
+    .findings {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    @media (max-width: 520px) {
+      .findings {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .finding-card {
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 20px 22px;
+    }
+
+    .finding-card .fc-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .finding-card p {
+      font-size: 15px;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    /* Reddit block */
+    .reddit-block {
+      background: #fff8f0;
+      border: 1px solid #e8d5b7;
+      border-left: 4px solid #ff6314;
+      border-radius: 0 6px 6px 0;
+      padding: 18px 24px;
+      margin: 24px 0;
+    }
+
+    .reddit-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin-bottom: 12px;
+      align-items: center;
+    }
+
+    .reddit-src {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      background: #ff6314;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    .reddit-thread {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: #8a6a4a;
+      font-style: italic;
+    }
+
+    .reddit-quote {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: #3a2a1a;
+      line-height: 1.6;
+      margin: 0 0 10px 0;
+    }
+
+    .reddit-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #b08060;
+      letter-spacing: 0.03em;
+    }
+
+    /* Citation */
+    .citation-block {
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 16px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .citation-block .cite-title {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .citation-block .cite-authors {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .citation-block .cite-venue {
+      color: var(--accent);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="tag">Preliminary Work · HCI &amp; Precision Agriculture</div>
+      <h1>Comparing the Argus Interface with an Optimized Interface as User-Friendly Interactive Platforms for
+        Controlled Environment Agriculture</h1>
+      <div class="hero-meta">
+        <span><strong>Yan Chen</strong> &nbsp;·&nbsp; Virginia Tech</span>
+        <span><a href="/cdn-cgi/l/email-protection#cfb6aca78fb9bbe1aaabba"><span class="__cf_email__"
+              data-cfemail="166f757e56606238737263">[email&#160;protected]</span></a></span>
+        <span>March 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <article>
+
+      <h2>Overview</h2>
+      <p>
+        Controlled Environment Agriculture (CEA) — encompassing commercial greenhouses, vertical farms, and indoor
+        growing facilities — generates a continuous stream of high-dimensional sensor data: temperature, humidity, vapor
+        pressure deficit (VPD), CO₂, photosynthetically active radiation (PAR), and electrical conductivity (EC).
+        Translating these data streams into timely, actionable agronomic decisions is a persistent challenge for
+        everyday growers. This preliminary study examines the gap between existing commercial monitoring platforms and a
+        proposed farmer-centric conversational AI interface.
+      </p>
+
+      <div class="pullquote">
+        <p>"The primary limitation of prevailing tools is their steep learning curve and high cognitive load — they
+          passively present complex data but require the user to manually interpret and formulate a mitigation
+          strategy."</p>
+      </div>
+
+      <h2>Background &amp; Motivation</h2>
+      <p>
+        A survey of widely adopted CEA management platforms — including Priva, Argus Controls, and AgriERP — reveals a
+        design paradigm heavily biased toward facility engineers rather than everyday farmers. These platforms
+        predominantly rely on complex, dashboard-heavy UIs that display raw telemetry across dense technical charts,
+        equipment schematics, and alarm logs.
+      </p>
+      <p>
+        For farmers with lower digital literacy, this interface design exacerbates the <em>"expert blind spot"</em>:
+        users are forced to fall back on personal heuristics rather than data-driven insights when troubleshooting
+        rapid-onset issues like gray mold outbreaks. Prior HCI research corroborates this friction. Hertzum &amp;
+        Abdelnour-Nocera (2020) documented how professional greenhouse growers experience high cognitive load when using
+        climate-management systems, finding that the systems' complexity often leads growers to develop informal coping
+        strategies rather than engaging with the full analytical capabilities the tools nominally offer.
+      </p>
+      <p>
+        Community sentiment from commercial growing forums independently corroborates these academic findings, providing
+        ecologically valid evidence of the friction points we aim to address.
+      </p>
+
+      <h2>Practitioner Voice: Evidence from the Field</h2>
+      <p>
+        To complement the academic literature, we surveyed practitioner discourse on <strong>r/macrogrowery</strong>,
+        one of the most active online communities for commercial-scale growers. Two threads are particularly
+        instructive.
+      </p>
+      <p>
+        In a thread titled <em>"Best greenhouse climate control with phone capability"</em>, growers actively sought
+        alternatives to enterprise-tier systems precisely because of UI complexity and cost barriers. The consensus that
+        emerged was telling: Priva and Argus are widely acknowledged as the commercial-grade gold standard for
+        reliability and sensor integration, but their software complexity and associated costs push many mid-scale
+        operators to seek more accessible, modern alternatives. Growers in this thread were not questioning the hardware
+        capability of these platforms — they were questioning whether they could realistically operate them without
+        dedicated technical staff. This is a usability gap, not a feature gap.
+      </p>
+
+      <div class="reddit-block">
+        <div class="reddit-meta">
+          <span class="reddit-src">r/macrogrowery</span>
+          <span class="reddit-thread">Thread: "Best greenhouse climate control with phone capability"</span>
+        </div>
+        <p class="reddit-quote">"[Priva and Argus are] commercial grade… but the cost and the software complexity… I
+          just need something I can actually use from my phone without a two-week training course."</p>
+        <div class="reddit-note">Grower describing barrier to adoption of enterprise CEA platforms</div>
+      </div>
+
+      <p>
+        A second thread on <em>"Power Scheduling / Controls Discussion"</em> captures the cognitive-load problem even
+        more directly. The discussion centers on the difficulty of configuring power and equipment scheduling within
+        systems like Argus — a task that, in principle, should be routine but in practice becomes a persistent source of
+        operational failure. One comment distills the community's collective frustration with unusual precision:
+      </p>
+
+      <div class="reddit-block">
+        <div class="reddit-meta">
+          <span class="reddit-src">r/macrogrowery</span>
+          <span class="reddit-thread">Thread: "Power Scheduling / Controls Discussion"</span>
+        </div>
+        <p class="reddit-quote">"Controls is probably the #1 misunderstood, screwed up, overpaid, 'it never works right'
+          part of a grow."</p>
+        <div class="reddit-note">Practitioner summarizing community-wide experience with CEA control system usability
+        </div>
+      </div>
+
+      <p>
+        This quote is remarkable not for its bluntness but for what it reveals structurally: the problem is not that
+        growers lack intelligence or motivation — it is that the interface between grower intent and system action is so
+        poorly designed that even experienced practitioners consistently fail to operationalize the tools they have paid
+        significant sums to acquire. This is a canonical HCI failure mode, and it maps directly onto the theoretical
+        framework of Norman's <em>gulf of execution</em>: the gap between what a user wants to do and the actions the
+        interface affords. Our proposed conversational AI interface is designed specifically to close this gulf.
+      </p>
+
+      <h2>Interface Comparison</h2>
+      <p>
+        The two screenshots below juxtapose the dominant commercial paradigm (Argus) against a proposed farmer-centric
+        conversational AI interface (FarmAssist AI). The contrast reveals fundamentally different theories of how
+        growers should interact with operational data.
+      </p>
+
+
+
+
+      <img src="../img/argus.png" width="100%" alt="Argus Controls Dashboard Screenshot" />
+      <div class="fig-caption"><span class="fig-label">Figure 1a.</span> Argus Controls dashboard — a
+        facility-engineer-oriented interface featuring dense telemetry charts, equipment status panels, and
+        multi-zone alarm logs. High cognitive load for non-specialist growers.</div>
+
+
+      <img src="../img/farm assist.jpg" width="100%" alt="FarmAssist AI Proposed Interface Mockup" />
+      <div class="fig-caption"><span class="fig-label">Figure 1b.</span> Proposed FarmAssist AI interface — a
+        conversational, grower-centric platform that translates sensor data into plain-language alerts,
+        prioritized action steps, and confidence-rated recommendations.</div>
+
+
+
+      <h2>Key Preliminary Findings</h2>
+      <p>
+        Our interface analysis and grower interviews surface four converging themes that motivate the design of a
+        conversational AI alternative:
+      </p>
+
+      <div class="findings">
+        <div class="finding-card">
+          <div class="fc-label">Finding 01</div>
+          <p>Existing platforms present data for inspection, not for decision-making. Growers must mentally translate
+            raw sensor readings into intervention choices without scaffolding.</p>
+        </div>
+        <div class="finding-card">
+          <div class="fc-label">Finding 02</div>
+          <p>Alert systems in commercial tools are high-volume and low-priority-ranked, producing alert fatigue that
+            causes growers to habitually dismiss notifications — including critical ones.</p>
+        </div>
+        <div class="finding-card">
+          <div class="fc-label">Finding 03</div>
+          <p>The absence of localized, crop-specific context forces growers to consult external agronomists or rely on
+            trial-and-error, introducing delays during time-sensitive disease events.</p>
+        </div>
+        <div class="finding-card">
+          <div class="fc-label">Finding 04</div>
+          <p>Conversational prompts ("What should I do right now?") dramatically lower the threshold for engagement and
+            surface decision-support in the vocabulary growers actually use.</p>
+        </div>
+      </div>
+
+      <h2>Proposed Design Direction</h2>
+      <p>
+        The FarmAssist AI prototype (Figure 1b) addresses each of these failure modes through three design principles.
+        First, <strong>actionable framing</strong>: rather than displaying raw VPD values, the interface surfaces a
+        prioritized action queue with time-to-impact estimates. Second, <strong>confidence communication</strong>:
+        recommendations are annotated with model confidence scores and the data sources underpinning each suggestion,
+        supporting grower trust calibration. Third, <strong>progressive disclosure</strong>: technical parameters
+        (TEA-cost modeling, LCA impact) are accessible on demand but hidden by default, preserving interface legibility
+        for non-specialist users.
+      </p>
+      <p>
+        This design draws on life-cycle assessment (LCA) data and Trichoderma efficacy modeling from the agronomic
+        literature, grounding AI-generated recommendations in domain-validated evidence rather than generic heuristics.
+        The interface also incorporates a cost-estimate mechanism, allowing growers to evaluate trade-offs between
+        immediate intervention costs and projected crop loss, directly addressing the economic decision-making
+        bottleneck identified in grower interviews.
+      </p>
+
+      <h2>Related Work</h2>
+
+      <div class="citation-block">
+        <div class="cite-title">Ordinary User Experiences at Work: A Study of Greenhouse Growers</div>
+        <div class="cite-authors">Morten Hertzum &amp; José Abdelnour-Nocera</div>
+        <div class="cite-venue">ACM Transactions on Computer-Human Interaction (TOCHI), 27(6), 2020</div>
+      </div>
+
+      <p>
+        Hertzum &amp; Abdelnour-Nocera's longitudinal study is the most directly relevant HCI work to our design
+        problem.
+        Using contextual inquiry and diary studies across commercial greenhouse operations, the authors documented how
+        climate-management system complexity creates systematic workarounds among professional growers — including
+        informal
+        knowledge-sharing networks that substitute for the analytical functions the software nominally provides. The
+        paper
+        establishes empirical groundwork for the cognitive-load argument underpinning our proposed intervention.
+      </p>
+
+      <div class="citation-block">
+        <div class="cite-title">"Best greenhouse climate control with phone capability"</div>
+        <div class="cite-authors">Community discussion thread · r/macrogrowery (Reddit)</div>
+        <div class="cite-venue">PRACTITIONER FORUM · Commercial CEA operators</div>
+      </div>
+
+      <div class="citation-block">
+        <div class="cite-title">"Power Scheduling / Controls Discussion"</div>
+        <div class="cite-authors">Community discussion thread · r/macrogrowery (Reddit)</div>
+        <div class="cite-venue">PRACTITIONER FORUM · Commercial CEA operators</div>
+      </div>
+
+      <p>
+        While not peer-reviewed, these community threads represent unmediated practitioner voices — a population
+        notoriously
+        difficult to reach through academic survey instruments. Their convergence with Hertzum &amp; Abdelnour-Nocera's
+        findings strengthens the ecological validity of our design problem statement. Crowdsourced practitioner
+        sentiment
+        has
+        been used productively in prior HCI work as a form of naturalistic need-finding (Bruckman, 2006; Lazar et al.,
+        2017).
+      </p>
+
+      <h2>Next Steps</h2>
+      <p>
+        This preliminary work motivates a structured comparative study. We plan to recruit commercial CEA growers across
+        Virginia and North Carolina for a within-subjects usability evaluation comparing the Argus platform with the
+        FarmAssist AI prototype on ecologically valid tasks — including gray mold diagnosis, irrigation adjustment, and
+        nutrient scheduling under time pressure. Primary measures will include task completion time, error rate,
+        NASA-TLX
+        cognitive load scores, and grower confidence ratings. Findings will directly inform the iterative design of the
+        conversational interface and contribute to the broader HCI literature on AI-mediated decision support in
+        high-stakes
+        agricultural contexts.
+      </p>
+
+    </article>
+  </div>
+
+  <footer>
+    <p>Yan Chen &nbsp;·&nbsp; Virginia Tech &nbsp;·&nbsp; <a href="mailto:ych@vt.edu">ych@vt.edu</a></p>
+  </footer>
+</body>
+
+</html>
