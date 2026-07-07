@@ -1,6 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1783410578.83634 "/Users/chenyan/Dropbox/dev/chensivan.github.io/cv/yanchen.tex" "yanchen.pdf" "yanchen" 1783410579.32858 0
-  "/Users/chenyan/Dropbox/dev/chensivan.github.io/cv/yanchen.tex" 1783396635.62898 36669 9e7fde206bd9a737b895b03cc834b3ea ""
+["pdflatex"] 1783411428.36909 "yanchen.tex" "yanchen.pdf" "yanchen" 1783411429.02203 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
@@ -91,7 +90,7 @@
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "res.cls" 1332904920 25109 4aaddbc00695c74cbaf6137679c86a6e ""
   "yanchen.aux" 1770480125 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "yanchen.tex" 1783396635.62898 36669 9e7fde206bd9a737b895b03cc834b3ea ""
+  "yanchen.tex" 1783411357.93125 36669 dfee4bf6008a9d6a1d09b184e2502032 ""
   (generated)
   "yanchen.aux"
   "yanchen.log"
