@@ -93,6 +93,10 @@ p {
     0 3px 8px rgba(0, 0, 0, 0.09); */
 }
 
+.papers .paperimage {
+  max-width: 260px;
+}
+
 .papers .paper-row {
   margin-bottom: 2em;
   vertical-align: top;
