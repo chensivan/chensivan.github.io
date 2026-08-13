@@ -1,0 +1,20 @@
+## Project-local ChkTeX config.
+##
+## TeX Live 2024's global chktexrc includes one UserWarnRegex rule for
+## nested optional arguments that uses PCRE negative lookahead. This machine's
+## chktex is compiled with POSIX extended regex support, so that rule cannot
+## compile. Replace the global UserWarnRegex list with the POSIX-compatible
+## defaults used by this project.
+
+UserWarnRegex =
+{
+    (?!#Always! use! \nmid)\\not! *(\||\\mid)
+
+    # Capitalize section when saying Section 6.
+    (?!#-1:Capitalize! before! references)PCRE:\b(chapter|(sub)?section|theorem|lemma|proposition|corollary|appendix)~\\ref
+    (?!#1:Capitalize! before! references)POSIX:([^[:alnum:]]|^)(chapter|(sub)?section|theorem|lemma|proposition|corollary|appendix)~\\ref
+
+    # Pretty tables--see http://texdoc.net/texmf-dist/doc/latex/booktabs/booktabs.pdf
+    (?!#-2:Use! \toprule,! midrule,! or! \bottomrule! from! booktabs)\\hline
+    (?!#-2:Vertical! rules! in! tables! are! ugly)\\begin\{(array|tabularx?\*?)\}(\[.*\])?\{.*\|.*\}
+}
