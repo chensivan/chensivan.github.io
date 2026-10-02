@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<!-- Website styles inspired by Michael Bernstein https://hci.stanford.edu/msb/ and Anhong Guo http://www.guoanhong.com/ -->
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+      content="Yan Chen leads the PRIME Lab at Virginia Tech, designing human-AI systems that amplify learning, collaboration, and human judgment." />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <meta name="author" content="Yan Chen" />
+    <title>Yan Chen | Human-AI Systems for Learning and Judgment</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <base target="_blank" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- javascript includes are at the bottom of the document -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98899335-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-98899335-1');
+    </script>
+    <link href="css/yanchen.css" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #17202a;
+        --muted: #5f6b76;
+        --paper: #ffffff;
+        --soft: #f6f4f2;
+        --line: #ded9d4;
+        --maroon: #861f41;
+        --maroon-dark: #5f1530;
+        --gold: #c89b3c;
+      }
+
+      html { scroll-behavior: smooth; }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+      body > .container { max-width: 1180px; }
+      a { color: var(--maroon); }
+      a:hover { color: var(--maroon-dark); }
+
+      .site-nav {
+        background: rgba(255,255,255,.97);
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .nav-inner {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1180px;
+        padding: 14px 20px;
+      }
+      .nav-name {
+        color: var(--ink);
+        font-size: 19px;
+        font-weight: 750;
+        letter-spacing: -.01em;
+      }
+      .nav-name:hover { color: var(--maroon); text-decoration: none; }
+      .nav-links { align-items: center; display: flex; gap: 22px; }
+      .nav-links a { color: #3e4750; font-size: 14px; font-weight: 600; }
+      .nav-links a:hover { color: var(--maroon); text-decoration: none; }
+
+      .hero {
+        align-items: center;
+        display: grid;
+        gap: 68px;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        min-height: 610px;
+        padding: 88px 0 74px;
+      }
+      .eyebrow {
+        color: var(--maroon);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: .13em;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font-size: clamp(42px, 5.5vw, 70px);
+        font-weight: 780;
+        letter-spacing: -.045em;
+        line-height: 1.02;
+        margin: 0 0 24px;
+        max-width: 850px;
+      }
+      .hero-lede {
+        color: #3e4851;
+        font-family: Georgia, serif;
+        font-size: 23px;
+        line-height: 1.55;
+        margin: 0 0 30px;
+        max-width: 780px;
+      }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+      .button-link {
+        border: 1px solid var(--maroon);
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 750;
+        padding: 11px 17px;
+      }
+      .button-link:hover { text-decoration: none; }
+      .button-link.primary { background: var(--maroon); color: white; }
+      .button-link.secondary { background: white; color: var(--maroon); }
+      .hero-photo img {
+        aspect-ratio: 4 / 5;
+        border-radius: 5px;
+        box-shadow: 18px 18px 0 var(--soft);
+        object-fit: cover;
+        width: 100%;
+      }
+      .hero-meta { color: var(--muted); font-size: 14px; margin-top: 23px; }
+
+      .impact-strip {
+        background: var(--ink);
+        border-radius: 6px;
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-bottom: 94px;
+        padding: 30px 14px;
+      }
+      .impact-item { border-right: 1px solid rgba(255,255,255,.18); padding: 0 22px; }
+      .impact-item:last-child { border-right: 0; }
+      .impact-number { display: block; font-size: 33px; font-weight: 780; line-height: 1.15; }
+      .impact-label { color: #d9dee2; display: block; font-size: 13px; line-height: 1.4; margin-top: 7px; }
+
+      .home-section { padding: 34px 0 76px; }
+      .soft-section {
+        background: var(--soft);
+        border-radius: 8px;
+        margin-bottom: 50px;
+        padding: 58px;
+      }
+      .section-kicker {
+        color: var(--maroon);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .13em;
+        margin-bottom: 11px;
+        text-transform: uppercase;
+      }
+      .section-title {
+        font-size: 36px;
+        font-weight: 760;
+        letter-spacing: -.025em;
+        line-height: 1.18;
+        margin: 0 0 15px;
+      }
+      .section-intro { color: var(--muted); font-size: 18px; margin: 0 0 34px; max-width: 760px; }
+      .program-grid, .project-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
+      .program-card {
+        border-top: 4px solid var(--maroon);
+        background: var(--soft);
+        min-height: 235px;
+        padding: 26px;
+      }
+      .program-number { color: var(--maroon); font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+      .program-card h3 { font-size: 21px; font-weight: 750; line-height: 1.3; margin: 18px 0 10px; }
+      .program-card p { color: var(--muted); font-size: 15px; margin: 0 0 16px; }
+      .project-tags { color: var(--maroon); font-size: 12px; font-weight: 700; }
+
+      .method-flow { display: grid; gap: 11px; grid-template-columns: repeat(5, 1fr); margin-top: 32px; }
+      .method-step {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        padding: 20px 17px;
+        position: relative;
+      }
+      .method-step:not(:last-child)::after {
+        color: var(--maroon);
+        content: "\2192";
+        font-size: 22px;
+        font-weight: 700;
+        position: absolute;
+        right: -20px;
+        top: 34%;
+        z-index: 2;
+      }
+      .method-step strong { display: block; font-size: 16px; margin-bottom: 6px; }
+      .method-step span { color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+      .project-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .project-card img { aspect-ratio: 16 / 9; background: var(--soft); object-fit: cover; width: 100%; }
+      .project-copy { display: flex; flex: 1; flex-direction: column; padding: 22px; }
+      .project-copy h3 { font-size: 21px; font-weight: 760; margin: 0 0 8px; }
+      .project-copy p { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0 0 16px; }
+      .project-evidence {
+        border-top: 1px solid var(--line);
+        color: #3d4650;
+        font-size: 12px;
+        font-weight: 700;
+        margin-top: auto;
+        padding-top: 14px;
+      }
+      .project-links { font-size: 13px; font-weight: 700; margin-top: 11px; }
+
+      .funding-card {
+        align-items: center;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--gold);
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 185px 1fr;
+        padding: 28px 30px;
+      }
+      .funding-label { color: var(--maroon); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      .funding-card h3 { font-size: 21px; font-weight: 750; margin: 0 0 7px; }
+      .funding-card p { color: var(--muted); margin: 0; }
+
+      .bio-layout { display: grid; gap: 55px; grid-template-columns: 1.3fr .7fr; }
+      .bio-copy { font-family: Georgia, serif; font-size: 18px; line-height: 1.75; }
+      .credential-list { border-left: 1px solid var(--line); padding-left: 30px; }
+      .credential { margin-bottom: 20px; }
+      .credential strong { display: block; font-size: 14px; }
+      .credential span { color: var(--muted); font-size: 14px; }
+
+      .team-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+      .team-card { align-items: center; border: 1px solid var(--line); display: grid; gap: 16px; grid-template-columns: 76px 1fr; padding: 14px; }
+      .team-card img { border-radius: 3px; height: 76px; object-fit: cover; width: 76px; }
+      .team-card strong { display: block; font-size: 14px; }
+      .team-card span { color: var(--muted); display: block; font-size: 12px; line-height: 1.4; }
+      .join-card { background: var(--soft); }
+
+      .news-list { border-top: 1px solid var(--line); }
+      .news-item { border-bottom: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: 92px 1fr; padding: 15px 0; }
+      .news-date { color: var(--maroon); font-size: 13px; font-weight: 750; }
+
+      .publication-archive {
+        border-top: 1px solid var(--line);
+        margin: 30px 0 70px;
+        padding-top: 20px;
+      }
+      .publication-archive > summary {
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 750;
+        list-style: none;
+        padding: 18px 0;
+      }
+      .publication-archive > summary::-webkit-details-marker { display: none; }
+      .publication-archive > summary::after { color: var(--maroon); content: "+"; float: right; font-size: 28px; }
+      .publication-archive[open] > summary::after { content: "\2212"; }
+      .archive-inner { padding-top: 20px; }
+      .archive-inner .paper-row { border-bottom: 1px solid #ece8e4; padding: 22px 0; }
+      .archive-inner .lead { font-size: 22px; }
+      .archive-inner .paper-description { color: var(--muted); }
+
+      @media (max-width: 900px) {
+        .nav-links a:not(.nav-essential) { display: none; }
+        .hero { gap: 35px; grid-template-columns: 1fr 210px; min-height: auto; padding: 65px 0; }
+        .program-grid, .project-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
+        .method-flow { grid-template-columns: 1fr; }
+        .method-step:not(:last-child)::after { bottom: -24px; left: 50%; right: auto; top: auto; transform: rotate(90deg); }
+      }
+      @media (max-width: 650px) {
+        body { font-size: 15px; }
+        .nav-inner { padding: 12px 16px; }
+        .hero { display: flex; flex-direction: column-reverse; gap: 34px; padding: 40px 0 55px; }
+        .hero-photo { align-self: flex-start; width: 150px; }
+        .hero h1 { font-size: 42px; }
+        .hero-lede { font-size: 19px; }
+        .impact-strip { grid-template-columns: repeat(2, 1fr); margin-bottom: 55px; row-gap: 28px; }
+        .impact-item:nth-child(2) { border-right: 0; }
+        .program-grid, .project-grid, .team-grid { grid-template-columns: 1fr; }
+        .soft-section { margin-left: -15px; margin-right: -15px; padding: 40px 24px; }
+        .section-title { font-size: 29px; }
+        .funding-card, .bio-layout { grid-template-columns: 1fr; }
+        .credential-list { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; padding-top: 25px; }
+        .news-item { grid-template-columns: 72px 1fr; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="nav-name" href="#top" target="_self">Yan Chen</a>
+        <div class="nav-links">
+          <a href="#research" target="_self">Research</a>
+          <a href="#work" target="_self">Selected work</a>
+          <a href="#approach" target="_self">Approach</a>
+          <a href="#people" target="_self">People</a>
+          <a class="nav-essential" href="#publications" target="_self">Publications</a>
+          <a class="nav-essential" href="cv/yanchen.pdf">CV</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <header class="hero" id="top">
+        <div>
+          <div class="eyebrow">Human-AI Interaction · Learning at Scale</div>
+          <h1>Designing AI that amplifies human learning and judgment.</h1>
+          <p class="hero-lede">I build and study human-AI systems that help people learn, reason, and collaborate at scale while preserving the human thinking that develops expertise.</p>
+          <div class="hero-actions">
+            <a class="button-link primary" href="#research" target="_self">Explore the research</a>
+            <a class="button-link secondary" href="#work" target="_self">See selected projects</a>
+            <a class="button-link secondary" href="cv/yanchen.pdf">Download CV</a>
+          </div>
+          <div class="hero-meta">
+            Assistant Professor of Computer Science, Virginia Tech &nbsp;·&nbsp; Director, PRIME Lab<br>
+            <a id="mail-link">ych at vt.edu</a> &nbsp;·&nbsp;
+            <a href="https://scholar.google.com/citations?user=UOv-ce4AAAAJ&hl=en">Google Scholar</a> &nbsp;·&nbsp;
+            <a href="https://twitter.com/HCI_Prof_YC">X</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="img/profile_pic_new.jpg" alt="Yan Chen, Assistant Professor at Virginia Tech">
+        </div>
+      </header>
+
+      <section class="impact-strip" aria-label="Research impact at a glance">
+        <div class="impact-item"><span class="impact-number">664</span><span class="impact-label">learners represented in TutorTrace</span></div>
+        <div class="impact-item"><span class="impact-number">882K+</span><span class="impact-label">IDE interaction events released</span></div>
+        <div class="impact-item"><span class="impact-number">8</span><span class="impact-label">real-world classroom deployments</span></div>
+        <div class="impact-item"><span class="impact-number">2×</span><span class="impact-label">instructor efficiency in the VizProg study</span></div>
+      </section>
+
+      <section class="home-section" id="research">
+        <div class="section-kicker">Research agenda</div>
+        <h2 class="section-title">How should humans and AI divide cognitive work?</h2>
+        <p class="section-intro">PRIME studies this question across individual learning, collective intelligence, and human judgment. Our goal is AI that expands what people can do without removing the thinking that helps them grow.</p>
+        <div class="program-grid">
+          <article class="program-card">
+            <span class="program-number">01</span>
+            <h3>Learning with AI</h3>
+            <p>How can AI accelerate learning without taking over the cognitive work required to build durable expertise?</p>
+            <div class="project-tags">TutorTrace · EditRail · Adaptive assistance</div>
+          </article>
+          <article class="program-card">
+            <span class="program-number">02</span>
+            <h3>Human-AI Orchestration</h3>
+            <p>How can AI help instructors and teams understand, support, and coordinate many people at once?</p>
+            <div class="project-tags">VizProg · VizGroup · DYNAMITE</div>
+          </article>
+          <article class="program-card">
+            <span class="program-number">03 · Emerging direction</span>
+            <h3>Human Judgment in AI Systems</h3>
+            <p>When should AI automate, when should people verify, and how should systems direct scarce human attention?</p>
+            <div class="project-tags">Delegation · Verification · Control</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="soft-section" id="approach">
+        <div class="section-kicker">How we work</div>
+        <h2 class="section-title">From behavioral data to real-world intervention</h2>
+        <p class="section-intro">Our research combines behavioral telemetry, human-centered design, and classroom deployment in a repeatable cycle.</p>
+        <div class="method-flow">
+          <div class="method-step"><strong>Observe</strong><span>Interaction traces and classroom activity</span></div>
+          <div class="method-step"><strong>Understand</strong><span>Human studies and behavioral models</span></div>
+          <div class="method-step"><strong>Intervene</strong><span>Adaptive assistance and interactive systems</span></div>
+          <div class="method-step"><strong>Evaluate</strong><span>Lab studies and authentic deployments</span></div>
+          <div class="method-step"><strong>Release</strong><span>Datasets, systems, and design knowledge</span></div>
+        </div>
+      </section>
+
+      <section class="home-section" id="work">
+        <div class="section-kicker">Selected work</div>
+        <h2 class="section-title">A cumulative research program</h2>
+        <p class="section-intro">Flagship projects that reveal how people learn with AI, how instructors make sense of activity at scale, and how interactive systems can preserve meaningful human agency.</p>
+        <div class="project-grid">
+          <article class="project-card">
+            <img src="img/tutortrace.png" alt="TutorTrace behavioral trace interface">
+            <div class="project-copy"><h3>TutorTrace</h3><p>A dataset and taxonomy for understanding learner behavior during AI-assisted programming.</p><div class="project-evidence">664 students · 882,367 events · 8 deployments</div><div class="project-links"><a href="papers/uist26_tutortrace.pdf">Paper</a> · <a href="https://vizpi.org/dataset">Dataset</a> · <a href="https://youtu.be/FFhtvwbLYD0">Video</a></div></div>
+          </article>
+          <article class="project-card">
+            <img src="img/editrail.png" alt="EditRail student-AI interaction visualization">
+            <div class="project-copy"><h3>EditRail</h3><p>Visualizes how AI-generated code enters and changes student programs so instructors can understand actual AI use.</p><div class="project-evidence">Instructor-facing AI oversight · UIST 2026</div><div class="project-links"><a href="papers/uist26_editrail.pdf">Paper</a> · <a href="https://arxiv.org/abs/2601.20085">arXiv</a></div></div>
+          </article>
+          <article class="project-card">
+            <img src="img/vizgroup.png" alt="VizGroup collaborative learning analytics interface">
+            <div class="project-copy"><h3>VizGroup</h3><p>Helps instructors identify and act on significant moments across many programming groups in real time.</p><div class="project-evidence">Evaluated with 12 instructors · UIST 2024</div><div class="project-links"><a href="papers/vizgroup_uist_2024.pdf">Paper</a> · <a href="https://arxiv.org/abs/2404.08743">arXiv</a></div></div>
+          </article>
+          <article class="project-card">
+            <img src="img/VizProg.jpg" alt="VizProg class-wide programming progress visualization">
+            <div class="project-copy"><h3>VizProg</h3><p>Maps class-wide coding progress so instructors can recognize misconceptions and intervene quickly.</p><div class="project-evidence">2× instructor efficiency · CHI 2023 Honorable Mention</div><div class="project-links"><a href="papers/chi2023_vizprog.pdf">Paper</a> · <a href="./video/vizprog.mp4">Demo</a></div></div>
+          </article>
+          <article class="project-card">
+            <img src="img/secondvoice.png" alt="SecondVoice proxy interface for group discussion">
+            <div class="project-copy"><h3>SecondVoice</h3><p>Explores how agent proxies can help people contribute ideas and participate more fully in co-located discussion.</p><div class="project-evidence">Inclusive human-AI collaboration · UIST 2026</div><div class="project-links"><a href="papers/uist26_secondvoice.pdf">Paper</a> · <a href="https://www.youtube.com/watch?v=CAFyYiMGoqE&amp;t=1s">Video</a></div></div>
+          </article>
+          <article class="project-card">
+            <img src="img/semanticon.jpeg" alt="SemanticOn web automation interface">
+            <div class="project-copy"><h3>SemanticOn</h3><p>Lets people specify robust, content-based conditions for web automation using language and highlighting.</p><div class="project-evidence">UIST 2022 Best Paper Honorable Mention</div><div class="project-links"><a href="papers/uist22_semanticon.pdf">Paper</a> · <a href="https://youtu.be/3l7WgyfzYEk">Video</a></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section" id="funding">
+        <div class="section-kicker">Funded research</div>
+        <h2 class="section-title">Building infrastructure for learning at scale</h2>
+        <div class="funding-card">
+          <div><div class="funding-label">National Science Foundation</div><div>Future CoRe · PI</div></div>
+          <div><h3>Collaborative learning at scale</h3><p>Developing new systems and research infrastructure for collaborative learning with Cliff Shaffer, Sang Won Lee, and Gary Kirk. <a href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2551552">NSF Award 2551552</a></p></div>
+        </div>
+      </section>
+
+      <section class="soft-section" id="about">
+        <div class="section-kicker">About</div>
+        <div class="bio-layout">
+          <div><h2 class="section-title">Yan Chen</h2><p class="bio-copy">Yan Chen is an Assistant Professor of <a href="https://cs.vt.edu/">Computer Science</a> at <a href="https://vt.edu/">Virginia Tech</a>, where he directs the Programming with Intelligent Machines &amp; Environments Lab (PRIME). He is also an Assistant Director of the <a href="https://hci.icat.vt.edu/people/leadership.html">Center for Human-Computer Interaction</a>. His research appears at ACM CHI, UIST, CSCW, L@S, and related venues.</p></div>
+          <div class="credential-list">
+            <div class="credential"><strong>Recognition</strong><span>Best Paper, L@S 2024 · Best Paper Honorable Mentions, CHI 2026 and 2023, UIST 2022</span></div>
+            <div class="credential"><strong>Prior appointment</strong><span>Postdoctoral Fellow, University of Toronto</span></div>
+            <div class="credential"><strong>Education</strong><span>PhD, University of Michigan · BS and MS, University of Colorado Boulder</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-section" id="people">
+        <div class="section-kicker">PRIME Lab</div>
+        <h2 class="section-title">People building human-centered AI</h2>
+        <p class="section-intro">PRIME is a human-computer interaction research group developing human-AI systems for learning, collaboration, and knowledge work.</p>
+        <div class="team-grid">
+          <a class="team-card" href="https://gpanayu.github.io/"><img src="img/profile_image/panayu.jpg" alt="Panayu Keelawat"><div><strong>Panayu Keelawat</strong><span>PhD student · Collaborative learning and wearable interaction</span></div></a>
+          <a class="team-card" href="https://xiaohang-tang.github.io/"><img src="img/profile_image/xiaohang_tang.jpeg" alt="Xiaohang Tang"><div><strong>Xiaohang Tang</strong><span>PhD student · Learning analytics and orchestration</span></div></a>
+          <a class="team-card" href="https://kevinpjk.github.io/"><img src="img/profile_image/kevin_pu.jpeg" alt="Kevin Pu"><div><strong>Kevin Pu</strong><span>PhD student, University of Toronto · End-user programming</span></div></a>
+          <a class="team-card" href="https://www.davidbarron.dev/"><img src="img/profile_image/david_barron.png" alt="David Barron"><div><strong>David Barron</strong><span>PhD student · AI-assisted learning and behavioral data</span></div></a>
+          <a class="team-card" href="https://sathwik.com/"><img src="img/profile_image/shiva_pochampally.png" alt="Shiva Pochampally"><div><strong>Shiva Pochampally</strong><span>Researcher · AI agents, trust, and control</span></div></a>
+          <a class="team-card join-card" href="https://forms.gle/jKSGXFYJ5BkCY1XCA"><img src="img/prime_logo_human.png" alt="PRIME Lab logo"><div><strong>Join PRIME</strong><span>Interested in human-AI systems for learning and work? Tell us about yourself.</span></div></a>
+        </div>
+      </section>
+
+      <section class="home-section" id="news">
+        <div class="section-kicker">Latest</div>
+        <h2 class="section-title">News</h2>
+        <div class="news-list">
+          <div class="news-item"><div class="news-date">Sep 2026</div><div>FlexGuard is conditionally accepted to UbiComp/IMWUT. Congratulations to Panayu and the team.</div></div>
+          <div class="news-item"><div class="news-date">Aug 2026</div><div>Our team received an <a href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2551552">NSF Future CoRe award</a> to advance collaborative learning at scale.</div></div>
+          <div class="news-item"><div class="news-date">Jun 2026</div><div>Four PRIME projects were conditionally accepted to UIST 2026.</div></div>
+          <div class="news-item"><div class="news-date">Jan 2026</div><div>Four papers were conditionally accepted to CHI 2026, including a Best Paper Honorable Mention.</div></div>
+        </div>
+      </section>
+      <!-- Preprint 
+         <div class="row">
+           <div class="col-md-12">
+             <p class="lead"><b>Preprint</b></p>
+             <hr>
+           </div>
+         </div>
+         <div class="row">
+           <div class="row">
+             <div class="papers" id="papers">
+             </div>
+           </div>
+         </div> -->
+      <!-- Complete publication record -->
+      <details class="publication-archive" id="publications">
+        <summary>View the complete publication archive</summary>
+        <div class="archive-inner">
+      <!-- research highlight -->
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lead"><b>Publications</b></p>
+          <hr>
+        </div>
+      </div>
+      <!-- list projects -->
+      <div class="row">
+        <!-- <div class="col-md-12">
+            <p>These papers represent the research directions that I have been thinking about lately.</p>
+            </div> -->
+        <!-- list selected publications -->
+        <div class="row">
+          <div class="papers" id="papers">
+
+            <!-- INSERT_YOUR_CODE -->
+            <!-- UbiComp/IMWUT 2026 paper starts -->
+            <div class="row paper-row" id="2026">
+              <div class="col-md-3 col-xs-4">
+                <a href="https://arxiv.org/abs/2509.18662">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/flexguard.png"
+                    alt="FlexGuard paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Panayu Keelawat, Darshan Nere, Jyotshna Bali, Rezky Dwisantika, Yogesh Phalak, Ardalan Kahak,
+                  Anekan Naicker, Liang He, Suyi Li, <b>Yan Chen</b>.<br>
+                  <a href="https://arxiv.org/abs/2509.18662" data-title="flexguard">FlexGuard: A Design Space for
+                    On-Body Feedback for Injury Prevention in Strength Training</a><br>
+                  <em>Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies
+                    (UbiComp/IMWUT), 2026</em> (conditionally accepted)
+                </div>
+                <div>
+                  [<a href="https://arxiv.org/abs/2509.18662">arXiv</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- UbiComp/IMWUT 2026 paper ends -->
+
+            <!-- UIST 2026 paper starts -->
+            <div class="row paper-row" id="2026">
+              <div class="col-md-3 col-xs-4">
+
+                <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/tutortrace.png"
+                  alt="TutorTrace learner behavior dataset and taxonomy" />
+
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  David Barron, Xiaohang Tang, Rezky Dwisantika, Minsun Kim, David H. Smith IV, Jianming Cui, <b>Yan
+                    Chen</b>.<br>
+                  <a href="papers/uist26_tutortrace.pdf" data-title="tutortrace">TutorTrace: A Dataset and Taxonomy for
+                    Classifying Learner Behavioral States during AI-Assisted Programming Education</a><br>
+                  <em>ACM Symposium on User Interface Software and Technology (UIST), 2026</em>
+                </div>
+                <div>
+                  [<a href="papers/uist26_tutortrace.pdf">local pdf</a> | <a
+                    href="https://arxiv.org/abs/2608.26184">arXiv</a> | <a href="https://vizpi.org/dataset">dataset</a>
+                  | <a href="https://youtu.be/FFhtvwbLYD0">video</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- UIST 2026 paper ends -->
+
+            <!-- UIST 2026 paper starts -->
+            <div class="row paper-row" id="2026">
+              <div class="col-md-3 col-xs-4">
+
+                <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/maestro.png"
+                  alt="MAESTRO paper thumbnail" />
+
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Sangwook Lee, Adnan Abbas, Sang Won Lee, Young-Ho Kim, <b>Yan Chen</b>.<br>
+                  <a href="papers/uist26_maestro.pdf" data-title="maestro">MAESTRO: Adapting GUIs and Steering
+                    Exploration with User Preferences in GUI Chatbots</a><br>
+                  <em>ACM Symposium on User Interface Software and Technology (UIST), 2026</em>
+                </div>
+                <div>
+                  [<a href="papers/uist26_maestro.pdf">local pdf</a> | <a
+                    href="https://arxiv.org/abs/2604.06134">arXiv</a> | <a
+                    href="https://www.youtube.com/watch?v=GVV9c02nLCc">30 sec preview</a> | <a
+                    href="https://www.youtube.com/watch?v=7rwImKqoxpE">5 min system demo</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- UIST 2026 paper ends -->
+
+            <!-- UIST 2026 paper starts -->
+            <div class="row paper-row" id="2026">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/uist26_secondvoice.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/secondvoice.png"
+                    alt="Can You Say This for Me paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Yue Shen, Rehema Abulikemu, Ryan P. McMahan, <b>Yan Chen</b>.<br>
+                  <a href="papers/uist26_secondvoice.pdf" data-title="speaking_up_by_proxy">Can You Say This for Me?
+                    Speaking Up by Proxy in
+                    Co-Located Discussion</a><br>
+                  <em>ACM Symposium on User Interface Software and Technology (UIST), 2026</em>
+                </div>
+                <div>
+                  [<a href="papers/uist26_secondvoice.pdf">local pdf</a> | <a
+                    href="https://arxiv.org/abs/2608.26185">arXiv</a> | <a
+                    href="https://www.youtube.com/watch?v=CAFyYiMGoqE&amp;t=1s">video</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- UIST 2026 paper ends -->
+
+            <!-- UIST 2026 paper starts -->
+            <div class="row paper-row" id="2026">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/uist26_editrail.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/editrail.png"
+                    alt="Editrail paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Ashley Ge Zhang, Yan-Ru Jhou, Yinuo Yang, Shamita Rao, Maryam Arab, <b>Yan Chen</b>, Steve Oney.<br>
+                  <a href="papers/uist26_editrail.pdf" data-title="editrail">Editrail: Understanding AI Usage by
+                    Visualizing Student-AI Interaction in Code</a><br>
+                  <em>ACM Symposium on User Interface Software and Technology (UIST), 2026</em>
+                </div>
+                <div>
+                  [<a href="papers/uist26_editrail.pdf">local pdf</a> | <a
+                    href="https://arxiv.org/abs/2601.20085">arXiv</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- UIST 2026 paper ends -->
+
+            <!-- 2026 paper starts -->
+            <div class="row paper-row" id="2026">
+              <div class="col-md-3 col-xs-4">
+                <a href="https://arxiv.org/abs/2607.23031">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/vlhcc26_canary.png"
+                    alt="The Help Ladder paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Panayu Keelawat, Sriram Narlapati, Sangwook Lee, Darshan Nere, Griffin Ogura, Xinran Adeline Li,
+                  Sang Won Lee, <b>Yan Chen</b>.<br>
+                  <a href="https://arxiv.org/abs/2607.23031" data-title="help_ladder">The Help Ladder: Skill-Adaptive
+                    Peer Scaffolding for Real-Time
+                    Collaborative Programming</a><br>
+                  <em>IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC), 2026</em>
+                </div>
+                <div>
+                  [<a href="https://arxiv.org/abs/2607.23031">arXiv</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 2026 paper ends -->
+
+            <!-- 2026 paper starts -->
+            <div class="row paper-row" id="2026">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/vlhcc26_openclaw.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/vlhcc26_openclaw.png"
+                    alt="Assistant or Actor paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Shiva Pochampally, Shengwei An, <b>Yan Chen</b>.<br>
+                  <a href="papers/vlhcc26_openclaw.pdf" data-title="assistant_or_actor">Assistant or Actor? Student
+                    Trust, Control, and Delegation
+                    Regret When Using a General-Purpose AI Agents</a><br>
+                  <em>IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC), 2026</em>
+
+                </div>
+                <div>
+                  [<a href="papers/vlhcc26_openclaw.pdf">local pdf</a> | <a
+                    href="https://arxiv.org/abs/2607.18257">arXiv</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 2026 paper ends -->
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2026">
+              <div class="col-md-3 col-xs-4">
+                <a href="">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px"
+                    src="img/livecoding_icer2025.png" alt="Live Coding in the CS Classroom paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Daniel Manesh, Vee Pettit, Yuhang Zheng, <b>Yan Chen</b>, David Smith IV, Sang Won Lee.<br>
+                  <a href="" data-title="livecoding_interview">Live Coding in the CS Classroom: An Interview Study of
+                    Instructor Practices</a><br>
+                  <em>ACM Conference on International Computing Education Research (ICER), 2026</em>
+                </div>
+                <div>
+                  [<a href="/papers/icer26_live_coding_interview.pdf">local pdf</a> ]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/chi26_codestream.png"
+                    alt="CodeStream paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Ashley Ge Zhang, Yan-Ru Zhou, Yinuo Yang, Shamita Rao, Maryam Arab, <b>Yan Chen</b>, Steve Oney.<br>
+                  <a href="/papers/chi26 codestream.pdf" data-title="codestream">CodeStream: Augmenting Timelines with
+                    Code Annotation for Navigating
+                    Large Coding Histories</a><br>
+                  <em>CHI 2026</em>
+                </div>
+                <div>
+                  [<a href="/papers/chi26 codestream.pdf">local pdf</a> | <a
+                    href="https://dl.acm.org/doi/10.1145/3772318.3791873">ACM</a> | <a
+                    href="https://programs.sigchi.org/chi/2026/program/content/222527">Talk</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/chi26 choir.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/chi26_choir.png"
+                    alt="Paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Sangwook Lee, Adnan Abbas, <b>Yan Chen</b>, Young-Ho Kim, Sang Won Lee.<br>
+                  <a href="papers/chi26 choir.pdf" data-title="choir">CHOIR: A Chatbot-mediated Organizational Memory
+                    Leveraging Communication in University Research Labs</a><br>
+                  <em>CHI 2026, 🏅<b style="color: #872747;">Best Paper Honorable Mention</b></em>
+                </div>
+                <div>
+                  [<a href="papers/chi26 choir.pdf">local pdf</a> | <a
+                    href="https://dl.acm.org/doi/10.1145/3772318.3791314">ACM</a> | <a
+                    href="https://www.youtube.com/watch?v=4BZ4tXeAkF0">Talk</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/chi26 humans-ai.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/chi26_humans-ai.png"
+                    alt="Human-Human-AI Triadic Programming paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Taufiq Daryanto, Xiaoahn Ding, Kaike Ping, Lance T Wilhelm, <b>Yan Chen</b>, Chris Brown, Eugenia H
+                  Rho.<br>
+                  <a href="papers/chi26 humans-ai.pdf" data-title="triadic_programming">
+                    Human-Human-AI Triadic Programming: Uncovering the Role of AI Agent and the Value of Human Partner
+                    in
+                    Collaborative Learning
+                  </a><br>
+                  <em>CHI 2026</em>
+                </div>
+                <div>
+                  [<a href="papers/chi26 humans-ai.pdf">local pdf</a> | <a
+                    href="https://dl.acm.org/doi/10.1145/3772318.3791773">ACM</a> | <a
+                    href="https://programs.sigchi.org/chi/2026/program/content/223222">Talk</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+            <!-- 2025 paper starts -->
+            <div class="row paper-row" id="2025">
+              <div class="col-md-3 col-xs-4">
+                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11303527">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/dynamite.png"
+                    alt="Dynamite paper thumbnail" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Panayu Keelawat, David Barron, Kaushik Narasimhan, Daniel Manesh, Xiaohang Tang, Xi Chen, Sang Won
+                  Lee, <b>Yan Chen</b>.<br>
+                  <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11303527"
+                    data-title="dynamite">Dynamite:
+                    Real-Time Debriefing Slide Authoring through AI-Enhanced Multimodal Interaction</a><br>
+                  <em>IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC), 2025</em>
+                </div>
+                <div>
+                  [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11303527">IEEE</a> | <a
+                    href="https://arxiv.org/abs/2507.20137">arXiv</a> | <a
+                    href="https://www.youtube.com/watch?si=MKpD1qRNPJAd9fn3&amp;v=1w7JcImJ4fk&amp;feature=youtu.be">Demo</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 2025 paper ends -->
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px"
+                    src="img/livecoding_icer2025.png" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Daniel Manesh, Tong Wu, <b>Yan Chen</b>, Sang Won Lee.
+                  <a href="" data-title="sifter">Understanding and Improving Student
+                    Note-Taking in Live Coding Lectures</a>
+                  <em>ACM Conference on International Computing Education Research (ICER), 2025</em>
+                </div>
+                <div>
+                  [<a href="https://dl.acm.org/doi/10.1145/3702652.3744224">ACM</a> | <a
+                    href='papers/livecoding_icer2025.pdf'>local</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/codellaborator.jpg" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Kevin Pu, Daniel Lazaro, Ian Arawjo, Haijun Xia, Ziang Xiao, Tovi Grossman, <b>Yan Chen</b>.
+                  <a href="" data-title="sifter">Assistance or Disruption? Exploring and Evaluating the Design and
+                    Trade-offs of Proactive AI Programming Support</a>
+                  <em>ACM Conference on Human Factors in Computing Systems (CHI), 2025</em>
+                </div>
+                <div>
+                  [<a href="video/codellaborator.mp4">demo video | <a href="https://arxiv.org/abs/2502.18658">pdf</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/group25_gcl.png" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Tianjia Wang, Tong Wu, Huayi Liu, Chris Brown, <b>Yan Chen</b>.
+                  <a href="papers/gen_colearner.pdf" data-title="sifter">Generative Co-Learners: Enhancing Cognitive and
+                    Social Presence of Students
+                    in Asynchronous Learning with Generative AI</a>
+                  <em>ACM GROUP 2025</em>
+                </div>
+                <div>
+                  [<a href="papers/gen_colearner.pdf">local</a> | <a
+                    href='https://dl.acm.org/doi/10.1145/3701198'>ACM</a>
+                  | <a href='https://youtu.be/x0FzD-o-JvU'>Demo</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/vizpi_sigcse25.jpg" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Tong Wu, Xiaohang Tang, Sam Wong, Xi Chen, Cliff Shaffer, <b>Yan Chen</b>.
+                  <a href="https://arxiv.org/abs/2408.14610" data-title="sifter">The Impact of Group Discussion and
+                    Formation on Student Performance: An Experience Report in a Large CS1 Course.</a>
+                  <em>SIGCSE 2025</em>
+                </div>
+                <div>
+                  [<a href="https://arxiv.org/abs/2408.14610">pre-print</a> | <a
+                    href="https://dl.acm.org/doi/10.1145/3641554.3701973">ACM</a> | <a
+                    href="/papers/sigcse_cs1_study.pdf">local pdf</a>]
+                </div>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/vizgroup.png" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Xiaohang Tang, Sam Wong, Kevin Pu, Xi Chen, Yalong Yang, <b>Yan Chen</b>.
+                  <a href="https://arxiv.org/abs/2404.08743" data-title="sifter">VizGroup: An AI-Assisted Event-Driven
+                    System for Real-Time Collaborative Programming Learning Analytics.</a>
+                  <em>UIST 2024</em>
+                </div>
+                <div>
+                  [<a href="papers/vizgroup_uist_2024.pdf">pre-print</a> | <a
+                    href="https://www.dropbox.com/scl/fi/gmfexd5qd0il12zuxg7m6/uist-preview.mp4?rlkey=34j2i3odgau6visikzae9ttq6&dl=0">30
+                    second demo</a> | <a
+                    href="https://www.dropbox.com/scl/fi/ovfsmqllqd1zt5igx5onl/uist-demo.mp4?rlkey=s49cru2syqphiwjnjio9du3g4&dl=0">5
+                    min demo</a>]
+                </div>
+                <div style="align-items: center;">
+                  <p>Listen to a two-host podcast about VizGroup. The content is generated by NotebookLM, and verified
+                    by the authors.</p>
+                  <audio controls style="height: 30px;">
+                    <source src="paper_podcast/vizgroup_podcast.wav" type="audio/mpeg">
+                  </audio>
+                </div>
+
+                <!-- <p class="paper-description">
+                                      SemanticOn enables users to specify visual and textual semantic conditions in web automation programs by
+                                      natural language description and content highlighting.
+                                      </p>
+                                      <p class="paper-description">
+                                      Thoughts: SemanticOn only considers 1-1 mapping between user intents and UI actions. How can we support other kinds of mappings? How can we design PbD systems are more trustworthy?
+                                      </p> -->
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="https://arxiv.org/abs/2404.10089">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/cflow.png" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Ashley Zhang, Xiaohang Tang, Steve Oney, <b>Yan Chen</b>. <a href="https://arxiv.org/abs/2404.10089"
+                    data-title="sifter">CFlow:
+                    Supporting Semantic Flow
+                    Analysis of Students' Code in Programming Problems at Scale.</a> <em>ACM Learning @ Scale 2024 (L@S)
+                    '24.</em> (🏆 <b style="color:#872747;">Best Paper</b>)
+                </div>
+                <div>
+                  [<a href="https://arxiv.org/abs/2404.10089">local pdf</a> | <a
+                    href="https://arxiv.org/abs/2404.10089">arxiv</a> | <a
+                    href='https://www.dropbox.com/s/mlw6y2r5ceyjesz/CFlow-v1.m4v?dl=0'>talk video</a>]
+                </div>
+                <!-- <p class="paper-description">
+                        SemanticOn enables users to specify visual and textual semantic conditions in web automation programs by
+                        natural language description and content highlighting.
+                        </p>
+                        <p class="paper-description">
+                        Thoughts: SemanticOn only considers 1-1 mapping between user intents and UI actions. How can we support other kinds of mappings? How can we design PbD systems are more trustworthy?
+                        </p> -->
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/vlhcc23_chatgpt.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/chatgpt_cs.png" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Tianjia Wang, Daniel Vargas Diaz, Chris Brown, <b>Yan Chen</b>.
+                  <a href="papers/vlhcc23_chatgpt.pdf" data-title="sifter">Exploring the Role of AI Assistants in
+                    Computer Science Education: Methods, Implications, and Instructor Perspectives.</a>
+                  <em>IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC), 2023.</em>
+                </div>
+                <div>
+                  [<a href="papers/vlhcc23_chatgpt.pdf">local pdf</a>]
+                </div>
+                <!-- <p class="paper-description">
+                                    SemanticOn enables users to specify visual and textual semantic conditions in web automation programs by
+                                    natural language description and content highlighting.
+                                    </p>
+                                    <p class="paper-description">
+                                    Thoughts: SemanticOn only considers 1-1 mapping between user intents and UI actions. How can we support other kinds of mappings? How can we design PbD systems are more trustworthy?
+                                    </p> -->
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/uist23_dilogics.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/dilogics.png" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Kevin Pu, Jim Yang, Angel Yuan, Minyi Ma, Rui Dong, Xinyu Wang, <b>Yan Chen</b>, Tovi Grossman.
+                  <a href="papers/uist23_dilogics.pdf" data-title="sifter">DiLogics: Creating Web Automation Programs
+                    with Diverse Logics.</a>
+                  <em>ACM Symposium on User Interface Software and Technology
+                    (UIST), 2023.</em>
+                </div>
+                <div>
+                  [<a href="papers/uist23_dilogics.pdf">local pdf</a> |
+                  <a href="https://youtu.be/9WBvEUFLu-M">5 min system demo</a>]
+                </div>
+                <!-- <p class="paper-description">
+                        SemanticOn enables users to specify visual and textual semantic conditions in web automation programs by
+                        natural language description and content highlighting.
+                        </p>
+                        <p class="paper-description">
+                        Thoughts: SemanticOn only considers 1-1 mapping between user intents and UI actions. How can we support other kinds of mappings? How can we design PbD systems are more trustworthy?
+                        </p> -->
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/vlhcc23_runex.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/runex.png" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Ashley Ge Zhang, <b>Yan Chen</b>, Steve Oney.
+                  <a href="papers/vlhcc23_runex.pdf" data-title="sifter">RunEx: Augmenting Regular-Expression Code
+                    Search with Runtime Values</a>
+                  <em>IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC), 2023.</em>
+                </div>
+                <div>
+                  [<a href="papers/vlhcc23_runex.pdf">local pdf</a>]
+                </div>
+                <!-- <p class="paper-description">
+                        SemanticOn enables users to specify visual and textual semantic conditions in web automation programs by
+                        natural language description and content highlighting.
+                        </p>
+                        <p class="paper-description">
+                        Thoughts: SemanticOn only considers 1-1 mapping between user intents and UI actions. How can we support other kinds of mappings? How can we design PbD systems are more trustworthy?
+                        </p> -->
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/chi2023_vizprog.pdf">
+                  <img class="paperimage img img-responsive" src="img/VizProg.jpg" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Ashley Zhang, <b>Yan Chen</b>, Steve Oney.
+                  <a href="papers/chi2023_vizprog.pdf" data-title="sifter">VizProg: Identifying Misunderstandings by
+                    Visualizing Students' Coding Progress.</a>
+                  <em>ACM Conference on Human Factors in Computing Systems (CHI), 2023.</em> (🏅<b
+                    style="color: #872747;">Best Paper Honorable Mention</b>)
+                </div>
+                <div>
+                  [<a href="papers/chi2023_vizprog.pdf">local pdf</a>
+                  | <a href="./video/vizprog.mp4">9 min system demo</a>]
+                  <!-- <a href="https://www.youtube.com/watch?v=eiDqxW0pIKw">presentation video
+                           </a>
+                           | <a href="./video/puzzleme.mp4">5 min system demo</a> |
+                           <a href="https://dl.acm.org/doi/10.1145/3479559">ACM link</a>] -->
+                </div>
+                <div>
+                  <p class="paper-description">
+                    VizProg presents an innovative, real-time visualization system that meaningfully displays class-wide
+                    students' coding progress, making it simple for programming instructors to pinpoint issues and
+                    mistakes.
+                  </p>
+                  <p class="paper-description">
+                    Thoughts: The challenge of delivering programming education at scale is exacerbated by factors such
+                    as real-time instruction, a large student population, novice learners, and the complexity of the
+                    material being taught. To enhance the classroom experience for students and simplify the task for
+                    instructors, how can we make programming education more engaging and manageable?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+            <!-- 1st paper starts -->
+            <div class="row paper-row" id="2020">
+              <div class="col-md-3 col-xs-4">
+                <a href="papers/uist22_semanticon.pdf">
+                  <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/semanticon.jpeg" />
+                </a>
+              </div>
+              <div class="col-md-9 col-xs-8">
+                <div>
+                  Kevin Pu, Rainey Fu, Rui Dong, Xinyu Wang, <b>Yan Chen</b>, Tovi Grossman.
+                  <a href="papers/uist22_semanticon.pdf" data-title="sifter">SemanticOn: Specifying Content-Based
+                    Semantic
+                    Conditions for Web Automation Programs.</a>
+                  <em>ACM Symposium on User Interface Software and Technology
+                    (UIST), 2022.</em> (🏅<b style="color: #872747;">Best Paper Honorable Mention</b>)
+                </div>
+                <div>
+                  [<a href="papers/uist22_semanticon.pdf">local pdf</a> |
+                  <a href="https://youtu.be/3l7WgyfzYEk">5 min video </a> |
+                  <a href="https://youtu.be/NBnc2ToS_j0">30 sec video</a>]
+                </div>
+                <p class="paper-description">
+                  SemanticOn enables users to specify visual and textual semantic conditions in web automation programs
+                  by
+                  natural language description and content highlighting.
+                </p>
+                <p class="paper-description">
+                  Thoughts: SemanticOn only considers 1-1 mapping between user intents and UI actions. How can we
+                  support other kinds of mappings? How can we design PbD systems are more trustworthy?
+                </p>
+                <div>
+                  <p class="paper-description"></p>
+                </div>
+              </div>
+            </div>
+            <!-- 1st paper end -->
+          </div>
+        </div>
+      </div>
+      <!-- <hr> -->
+      <!-- </br> </br> -->
+      <!-- selected publication -->
+      <!-- <div class="row">
+         <div class="col-md-12">
+           <p class="lead"><b>Publications</b></p>
+         </div>
+         </div> -->
+      <!-- list publications -->
+      <div class="row">
+        <div class="papers" id="papers">
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/CSCW2021_PuzzleMe.pdf">
+                <img class="paperimage img img-responsive" src="img/puzzleme.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                April Wang*, <b>Yan Chen*</b>, John Joon Young Chung,
+                Christopher Brooks, Steve Oney.
+                <a href="papers/CSCW2021_PuzzleMe.pdf" data-title="sifter">PuzzleMe: Leveraging Peer Assessment for
+                  In-Class Programming
+                  Exercises.</a>
+                <em>ACM Conference on Computer-Supported Cooperative Work and
+                  Social Computing (CSCW), 2021 (* == equal contribution).</em>
+              </div>
+              <div>
+                [<a href="papers/CSCW2021_PuzzleMe.pdf">local pdf</a>]
+                <a href="https://www.youtube.com/watch?v=eiDqxW0pIKw">presentation video
+                </a>
+                | <a href="./video/puzzleme.mp4">5 min system demo</a> |
+                <a href="https://dl.acm.org/doi/10.1145/3479559">ACM link</a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  To scale programming support in a large live classroom,
+                  PuzzleMe coordinates students to help each other by exchanging
+                  test cases and problem-solving approaches for coding
+                  exercises.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/uist22_mimic.pdf">
+                <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/mimic.jpeg" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                Karthik Mahadevan, <b>Yan Chen</b>, Maya Cakmak, Anthony Tang, Tovi Grossman.
+                <a href="papers/uist22_mimic.pdf" data-title="sifter">Mimic: In-Situ Recording and Re-Use of
+                  Demonstrations to Support Robot Teleoperation.</a>
+                <em>ACM Symposium on User Interface Software and Technology
+                  (UIST), 2022. </em>
+              </div>
+              <div>
+                [<a href="papers/uist22_mimic.pdf">local pdf</a> |
+                <a href="https://youtu.be/ax3LHAf_usI">30 sec preview </a> |
+                <a href="https://youtu.be/aS1-Iq9brzY">5 min system demo</a>]
+              </div>
+              <p class="paper-description">
+                Teleoperators can use Mimic to program robots by demonstration and reuse demonstrations in new context
+              </p>
+              <div>
+                <p class="paper-description"></p>
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3519939.3523711">
+                <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/webrobot.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                Rui Dong, Zhicheng Huang, Ian Iong Lam, <b>Yan Chen</b>, Xinyu Wang.
+                <a href="https://dl.acm.org/doi/abs/10.1145/3519939.3523711" data-title="sifter">WebRobot: Web Robotic
+                  Process Automation using Interactive Programming-by-Demonstration.</a>
+                <em>ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI), 2022. </em>
+              </div>
+              <div>
+                [<a href="https://dl.acm.org/doi/abs/10.1145/3519939.3523711">ACM</a>
+                <!-- <a href="https://youtu.be/GdiwJaJ59sQ">30 sec preview </a> |
+                        <a href="https://youtu.be/XKciHmH_gZs">5 min system demo</a> |
+                        <a href="https://dl.acm.org/doi/10.1145/3472749.3474796"                 >ACM link</a
+                        > -->
+                ]
+              </div>
+              <div>
+                <p class="paper-description"></p>
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          </br>
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="">
+                <img class="paperimage img img-responsive" src="img/asteroids.jpeg" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                Jiannan Li, Mauricio Sousa, Chu Li, Jessie Liu, <b>Yan Chen</b>,
+                Ravin Balakrishnan, Tovi Grossman.
+                <a href="" data-title="sifter">ASTEROIDS: Exploring Swarms of Mini-Telepresence Robots for
+                  Physical Skill Demonstration.</a>
+                <em>ACM Conference on Human Factors in Computing Systems (CHI),
+                  2022. </em>
+              </div>
+              <div>
+                [<a href="papers/CHI2022_asteroids.pdf">local pdf</a> |
+                <a href="https://youtu.be/9Rbez68jeTY">30 sec preview </a> |
+                <a href="https://youtu.be/SYCYVwSNtnU">2 min system demo</a> |
+                <a href="https://youtu.be/F-4xe6gHhFE">presentation video</a>
+                <!-- |
+                        <a href="https://dl.acm.org/doi/10.1145/3472749.3474796"
+                          >ACM link</a
+                        > -->
+                ]
+              </div>
+              <p class="paper-description">
+                Asteroids explores a new space of remote physical task learning via telepresence robots
+              </p>
+              <div>
+                <p class="paper-description"></p>
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/cscw2020_Livestreaming.pdf">
+                <img class="paperimage img img-responsive" src="img/livestream.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Walter S. Lasecki, Tao Dong.
+                <a href="papers/cscw2020_Livestreaming.pdf" data-title="sifter">Towards Supporting Programming
+                  Education
+                  at Scale via Live
+                  Streaming.</a>
+                <em>ACM Conference on Computer-Supported Cooperative Work and
+                  Social Computing (CSCW), 2020.</em>
+              </div>
+              <div>
+                [<a href="papers/cscw2020_Livestreaming.pdf">local pdf</a> |
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3434168">ACM link</a>
+                |
+                <a href="https://youtu.be/1b5ENP3E6fI">9 min paper review by Vivek Haldar</a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  Explores the motivations/barriers/opportunities of live
+                  streaming programming as compared to pre-recorded video
+                  through interviews with 14 streamers & 12 viewers.
+                </p>
+                <p class="paper-description">
+                  Thoughts: What can we do to enhance the learning experience in an online environment by adopting the
+                  in-person social features that a physical library has? What can be done to support different social
+                  needs in an online learning context in order to enhance learning outcomes?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/UIST2021_umitation.pdf">
+                <img class="paperimage img img-responsive" src="img/umitation.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Tovi Grossman.
+                <a href="papers/UIST2021_umitation.pdf" data-title="sifter">Umitation: Retargeting UI Behavior Examples
+                  for Website
+                  Design.</a>
+                <em>ACM Symposium on User Interface Software and Technology
+                  (UIST), 2021</em>
+              </div>
+              <div>
+                [<a href="papers/UIST2021_umitation.pdf">local pdf</a> |
+                <a href="https://youtu.be/GdiwJaJ59sQ">30 sec preview </a> |
+                <a href="https://youtu.be/XKciHmH_gZs">5 min system demo</a> |
+                <a href="https://dl.acm.org/doi/10.1145/3472749.3474796">ACM link</a> | <a style="cursor: pointer;"
+                  onClick="if
+                        (document.getElementById('uist21-ane').style.display ==
+                        'block') {
+                        document.getElementById('uist21-ane').style.display='none';
+                        } else {
+                        document.getElementById('uist21-ane').style.display='block';
+                        }">Anecdotes</a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  Umitation enables web developers to perform "copy-and-paste"
+                  (retarget) interaction on web front-end UI behaviors
+                  with a trigger-object-response framework.
+                </p>
+              </div>
+              <div id="uist21-ane" style="border-style: none; background: white; display: none">
+                Umitation enables web developers to perform "copy-and-paste"
+                (retarget) interaction on web front-end UI behaviors
+                with a trigger-object-response framework.Umitation enables web developers to perform "copy-and-paste"
+                (retarget) interaction on web front-end UI behaviors
+                with a trigger-object-response framework.Umitation enables web developers to perform "copy-and-paste"
+                (retarget) interaction on web front-end UI behaviors
+                with a trigger-object-response framework.
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/CHI2021_CoCapture.pdf">
+                <img class="paperimage img img-responsive" src="img/cocapture2.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Sang Won Lee, Steve Oney.
+                <a href="papers/CHI2021_CoCapture.pdf" data-title="sifter">CoCapture: Effectively Communicating UI
+                  Behaviors on Existing
+                  Websites by Demonstrating and Remixing.</a>
+                <em>ACM Conference on Human Factors in Computing Systems (CHI),
+                  2021.</em>
+              </div>
+              <div>
+                [<a href="papers/CHI2021_CoCapture.pdf">local pdf</a> |
+                <a href="https://youtu.be/yusIlKsKNGs">30 sec preview </a> |
+                <a href="https://youtu.be/0IoaYmFqrpA">5 min system demo</a> |
+                <a href="https://dl.acm.org/doi/10.1145/3411764.3445573">ACM link</a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  CoCapture allows designers to create UI behavior mockups on
+                  existing web interfaces by demonstrating and remixing, and to
+                  accurately describe their requests to developers by
+                  referencing the resulting mockups using hypertext.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/VLHCC2020_Bashon.pdf">
+                <img class="paperimage img img-responsive" src="files/bashon.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Jaylin Herskovitz, Walter S. Lasecki, Steve
+                Oney.
+                <a href="papers/VLHCC2020_Bashon.pdf" data-title="sifter">A Hybrid Crowd-Machine Workflow for Program
+                  Synthesis.</a>
+                <em>IEEE Symposium on Visual Languages and Human-Centric
+                  Computing (VL/HCC), 2020.</em>
+              </div>
+              <div>
+                [<a href="papers/VLHCC2020_Bashon.pdf">local pdf</a> |
+                <a href="https://ieeexplore.ieee.org/document/9127248">IEEE link</a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  Bashon introduces a crowdsourcing approach to help make
+                  program synthesis systems more robust, reliable, and
+                  trustworthy, and reduces the cost of downstream data
+                  collection for training a program synthesis system.
+                </p>
+                <!-- <a href='papers/IMX20_Sifter.pdf'>pdf</a>&nbsp;&middot;&nbsp;
+                        <a href='https://youtu.be/EarJFyoH6c4'>video preview
+                        </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/VLHCC2020_Edcode.pdf">
+                <img class="paperimage img img-responsive" src="files/edcode.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Jaylin Herskovitz, Gabriel Matute, April Wang,
+                Sang Won Lee, Walter S. Lasecki, Steve Oney.
+                <a href="papers/VLHCC2020_Edcode.pdf" data-title="sifter">EdCode: Towards Personalized Support at Scale
+                  for Remote
+                  Assistance in CS Education.</a>
+                <em>IEEE Symposium on Visual Languages and Human-Centric
+                  Computing (VL/HCC), 2020.</em>
+                (🏆 <b style="color:#872747;">Best Short Paper</b>)
+              </div>
+              <div>
+                [<a href="papers/VLHCC2020_Edcode.pdf">local pdf</a> |
+                <a href="https://ieeexplore.ieee.org/document/9127260">IEEE link</a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  EdCode applies a semi-asychronous on-demand help seeking model
+                  in a learning setting, aiming towards provide more
+                  personalized support at scale.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/CHI2020.pdf">
+                <img class="paperimage img img-responsive" src="files/guitesting.jpg" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Maulishree Pandey, Jean Y. Song, Walter S.
+                Lasecki, Steve Oney.
+                <a href="papers/CHI2020.pdf" data-title="GUItesting">Improving Crowd-Supported GUI Testing with
+                  Structural
+                  Guidance.</a>
+                <em>ACM Conference on Human Factors in Computing Systems (CHI),
+                  2020.</em>
+              </div>
+              <div>
+                [<a href="papers/CHI2020.pdf">local pdf</a> |
+                <a href="https://youtu.be/eVJ2gVqoek0">30s preview</a> |
+                <a href="https://youtu.be/kaVOWFafv9M">presentation video (11min)</a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  Two techniques, interactive event-flow graphs and GUI-level
+                  guidance, that guide GUI testers to discover more test cases
+                  and avoid duplicate test cases.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/IMX20_Sifter.pdf">
+                <img class="paperimage img img-responsive" src="files/sifter.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Andrés Monroy-Hernández, Ian Wehrman, Steve
+                Oney, Walter S. Lasecki, Rajan Vaish.
+                <a href="papers/IMX20_Sifter.pdf" data-title="sifter">Sifter: A Hybrid Workflow for Theme-based Video
+                  Curation at
+                  Scale.</a>
+                <em>ACM Conference on Interactive Media Experiences (IMX),
+                  2020.</em>
+              </div>
+              <div>
+                [<a href="papers/IMX20_Sifter.pdf">local pdf</a> |
+                <a href="https://dl.acm.org/doi/10.1145/3391614.3393657">ACM link</a>
+                |
+                <a href="https://youtu.be/EarJFyoH6c4">video preview (2min) </a>
+                |
+                <a href="https://youtu.be/HkeAwGlkyaA">presentation video (12min) </a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  Sifter improves the video curation process by combining
+                  automated techniques with a human-powered two-stage pipeline
+                  that browses, selects, and reaches an agreement.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2017">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/CHI2017.pdf">
+                <img class="paperimage img img-responsive" src="files/codeon_pic.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Sang Won Lee, Yin Xie, YiWei Yang, Walter
+                Lasecki, and Steve Oney.
+                <a href="papers/CHI2017.pdf" data-title="Codeon">Codeon: On-Demand Software Development Assistance.</a>
+                <em>ACM Conference on Human Factors in Computing Systems (CHI),
+                  2017.</em>
+              </div>
+              <div>
+                [<a href="papers/CHI2017.pdf">local pdf</a> |
+                <a href="https://www.youtube.com/watch?v=gDW3hK3YlP0&t=2s">full video</a>
+                |
+                <a href="https://www.youtube.com/watch?v=NVuUNak28T8">30s preview</a>
+                |
+                <a style="cursor: pointer;" onClick="if
+                        (document.getElementById('chi17-bib').style.display ==
+                        'block') {
+                        document.getElementById('chi17-bib').style.display='none';
+                        } else {
+                        document.getElementById('chi17-bib').style.display='block';
+                        }">
+                  BibTeX </a>]
+                <div>
+                  <p class="paper-description">
+                    CodeOn enables effective task hand-offs between developers
+                    and remote helpers by allowing asynchronous responses to
+                    on-demand requests.
+                  </p>
+                </div>
+                <div id="chi17-bib" style="border-style: none; background: white; display: none">
+                  <pre>
+@inproceedings{chen2017codeon,
+  title={Codeon: On-demand software development assistance},
+  author={Chen, Yan and Lee, Sang Won and Xie, Yin and Yang, YiWei and Lasecki, Walter S and Oney, Steve},
+  booktitle={Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems},
+  pages={6220--6231},
+  year={2017},
+  organization={ACM}
+}</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2017">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/CHI2017_LBW.pdf">
+                <img class="paperimage img img-responsive" src="files/chi2017_lbw.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                Sang Lee, <b>Yan Chen</b>, Noah Klugman, Sai R. Gouravajhala,
+                Angela Chen, and Walter S. Lasecki.
+                <a href="papers/CHI2017_LBW.pdf">Exploring Coordination Models for Ad Hoc Programming Teams</a>
+                <em>ACM Conference on Human Factors in Computing Systems Late
+                  Breaking Work (CHI), 2017.</em>
+              </div>
+              <div>
+                [<a href="papers/CHI2017_LBW.pdf">pdf</a> |
+                <a href="https://dl.acm.org/doi/10.1145/3027063.3053268">ACM lilnk</a>]
+              </div>
+              <div>
+                <p class="paper-description">
+                  Explore the types and causes of the coordination costs for
+                  transient software teams when using existing collaborative
+                  programming tools: a VCS and a shared editor.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2016">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/CHI2016.pdf">
+                <img class="paperimage img img-responsive" src="files/chi2016_img.jpg" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <b>Yan Chen</b>, Steve Oney and Walter Lasecki.
+                <a href="papers/CHI2016.pdf">Towards Providing On-Demand Expert Support for Software
+                  Developers.</a>
+                <em>ACM Conference on Human Factors in Computing Systems (CHI),
+                  2016.</em>
+              </div>
+              <div>
+                [<a href="papers/CHI2016.pdf">pdf</a> |
+                <a href="https://dx.doi.org/10.1145/2858036.2858512">ACM DL</a> |
+                <a href="https://www.youtube.com/watch?v=RmNuqO4tOyc">30s preview</a>
+                |
+                <a href="https://www.youtube.com/watch?v=1h1Otov-26c">talk</a> |
+                <a style="cursor: pointer;" onClick="if
+                        (document.getElementById('chi16-bib').style.display ==
+                        'block') {
+                        document.getElementById('chi16-bib').style.display='none';
+                        } else {
+                        document.getElementById('chi16-bib').style.display='block';
+                        }">
+                  BibTeX </a>]
+                <div id="chi16-bib" style="border-style: inset; background: white; display: none">
+                  <pre>
+@inproceedings{chen2016towards,
+                      title={Towards providing on-demand expert support for software developers},
+                      author={Chen, Yan and Oney, Steve and Lasecki, Walter S},
+                      booktitle={Proceedings of the 2016 CHI conference on human factors in computing systems},
+                      pages={3192--3203},
+                      year={2016},
+                      organization={ACM}
+                    }</pre>
+                </div>
+              </div>
+              <div>
+                <p class="paper-description">
+                  Two studies that present the opportunities and the design
+                  recommendations of on-demand remote support systems for
+                  developers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <hr />
+      <br /><br />
+      <!-- other pubs. -->
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lead"><b>Other Publications</b></p>
+        </div>
+      </div>
+      <!-- other publications list -->
+      <div class="row">
+        <div class="papers">
+          <!-- <div class='row paper-row' id='2017'>
+               <div class='col-md-3 col-xs-4'>
+                 <a href='papers/vlhccgc.pdf'>
+                   <img class='paperimage img img-responsive' src='files/vlhccgc.png' />
+                 </a>
+               </div>
+               <div class='col-md-9 col-xs-8'>
+                 <div><a href='papers/vlhccgc.pdf'>Mocking-up Desired UI
+                     Behaviors from UI Element-Based Recording</a></div>
+                 <div>Yan Chen</div>
+                 <div>VL/HCC&nbsp;Graduate Consortium&nbsp;2019</div>
+                 <div>
+                   <a href='papers/vlhccgc.pdf'>pdf</a>&nbsp;&nbsp;
+                 </div>
+               </div>
+               </div> -->
+
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="https://arxiv.org/abs/2410.16513">
+                <img class="paperimage img img-responsive" style="margin-bottom: 20px"
+                  src="img/sphere_chi_lbw_25.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                Xiaohang Tang, Sam Wong, Marcus Huynh, Zicheng He, Yalong Yang, <b>Yan Chen</b>.
+                <a href="https://arxiv.org/abs/2410.16513" data-title="sifter">SPHERE: Supporting Personalized Feedback
+                  at Scale in Programming Classrooms with Structured Review of Generative AI
+                  Outputs.</a>
+                <em>ACM Symposium on User Interface Software and Technology
+                  (CHI LBW), 2025.</em>
+              </div>
+              <div>
+                [<a href="https://arxiv.org/abs/2410.16513">paper</a>]
+              </div>
+              <!-- <p class="paper-description">
+                                    SemanticOn enables users to specify visual and textual semantic conditions in web automation programs by
+                                    natural language description and content highlighting.
+                                    </p>
+                                    <p class="paper-description">
+                                    Thoughts: SemanticOn only considers 1-1 mapping between user intents and UI actions. How can we support other kinds of mappings? How can we design PbD systems are more trustworthy?
+                                    </p> -->
+              <div>
+                <p class="paper-description"></p>
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          <!-- 1st paper starts -->
+          <div class="row paper-row" id="2020">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/vizpi.pdf">
+                <img class="paperimage img img-responsive" style="margin-bottom: 20px" src="img/vizpi.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                Xiaohang Tang, Xi Chen, Sam Wong, <b>Yan Chen</b>.
+                <a href="papers/vizpi.pdf" data-title="sifter">VizPI: A Real-Time Visualization Tool for Enhancing
+                  Peer Instruction in Large-Scale Programming Lectures.</a>
+                <em>ACM Symposium on User Interface Software and Technology
+                  (UIST Poster), 2023.</em>
+              </div>
+              <div>
+                [<a href="papers/vizpi.pdf">local pdf</a> ]
+              </div>
+              <!-- <p class="paper-description">
+                                    SemanticOn enables users to specify visual and textual semantic conditions in web automation programs by
+                                    natural language description and content highlighting.
+                                    </p>
+                                    <p class="paper-description">
+                                    Thoughts: SemanticOn only considers 1-1 mapping between user intents and UI actions. How can we support other kinds of mappings? How can we design PbD systems are more trustworthy?
+                                    </p> -->
+              <div>
+                <p class="paper-description"></p>
+              </div>
+            </div>
+          </div>
+          <!-- 1st paper end -->
+          <!-- paper1 starts -->
+          <div class="row paper-row" id="2017">
+            <div class="col-md-3 col-xs-4">
+              <a href="files/CSCW_2020_Demo.pdf">
+                <img class="paperimage img img-responsive" src="img/wireon.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a href="files/CSCW_2020_Demo.pdf">WireOn: Supporting Remote Collaboration for Embedded System
+                  Development.</a>
+              </div>
+              <div><b>Yan Chen</b>, Yaxing Yao, and Jasmine Jones.</div>
+              <div>
+                <a href="https://cscw.acm.org/2020/index.php/demonstrations/">CSCW Demo</a>
+                &nbsp;2020
+              </div>
+              <div>
+                [<a href="https://youtu.be/uggyxHAlLDQ">Preview Demo</a> |
+                <a href="files/CSCW_2020_Demo.pdf">Paper</a>]
+              </div>
+            </div>
+          </div>
+          <!-- paper 1 ends -->
+          <!-- paper1 starts -->
+          <div class="row paper-row" id="2017">
+            <div class="col-md-3 col-xs-4">
+              <a href="#">
+                <img class="paperimage img img-responsive" src="img/arch.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div><a href="#">On-demand Programming Assistance.</a></div>
+              <div><b>Yan Chen</b>, Jasmine Jones, and Steve Oney.</div>
+              <div>
+                <a href="https://www.microsoft.com/en-us/research/event/new-future-of-work/">The New Future of Work</a>
+                &nbsp;Microsoft Research&nbsp;2020
+              </div>
+              <div>
+                [<a href="https://youtu.be/5xlaMOUb7ao">Presentation</a> |
+                <a href="files/future_of_work.pdf">Paper</a>]
+              </div>
+            </div>
+          </div>
+          <!-- paper 1 ends -->
+          <!-- paper1 starts -->
+          <div class="row paper-row" id="2017">
+            <div class="col-md-3 col-xs-4">
+              <a href="#">
+                <img class="paperimage img img-responsive" src="img/flutter.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a
+                  href="https://medium.com/flutter/best-practices-for-hosting-a-live-streaming-coding-session-18d28b3a8d93">Best
+                  practices for hosting a live streaming coding
+                  session.</a>
+              </div>
+              <div>Yan Chen</div>
+              <div>
+                <a href="https://medium.com/flutter">Google Flutter Medium Channel</a>
+                2019
+              </div>
+              <div>
+                [<a
+                  href="https://medium.com/flutter/best-practices-for-hosting-a-live-streaming-coding-session-18d28b3a8d93">Medium
+                  Post (5.4k views)</a>
+                |
+                <a href="https://www.youtube.com/watch?v=mGkuOQK3kAM&t=2s">Youtube (9.7k views)</a>]
+              </div>
+            </div>
+          </div>
+          <!-- paper 1 ends -->
+          <div class="row paper-row" id="2017">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/vlhccgc.pdf">
+                <img class="paperimage img img-responsive" src="img/vlhccgc.jpg" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a href="papers/vlhccgc.pdf">Mocking-up Desired UI Behaviors from UI Element-Based
+                  Recording</a>
+              </div>
+              <div>Yan Chen</div>
+              <div>VL/HCC&nbsp;Graduate Consortium&nbsp;2019</div>
+              <div><a href="papers/vlhccgc.pdf">pdf</a>&nbsp;&nbsp;</div>
+            </div>
+          </div>
+          <!-- paper1 starts -->
+          <div class="row paper-row" id="2017">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/HCOMP17_Poster.pdf">
+                <img class="paperimage img img-responsive" src="files/hcomp17.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a href="papers/HCOMP17_Poster.pdf">The Need for Real-Time Crowd Generation of Task Lists from
+                  Speech</a>
+              </div>
+              <div>Sang Lee, <b>Yan Chen</b>, and Walter S. Lasecki.</div>
+              <div>HCOMP&nbsp;WIP&nbsp;2017</div>
+              <div><a href="papers/HCOMP17_Poster.pdf">pdf</a>&nbsp;&nbsp;</div>
+            </div>
+          </div>
+          <!-- paper 1 ends -->
+          <div class="row paper-row" id="2016">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/CI2016.pdf">
+                <img class="paperimage img img-responsive" src="files/3studies.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a href="papers/CI2016.pdf">Expert Crowd Support Systems for Software Developers</a>
+              </div>
+              <div><b>Yan Chen</b>, Steve Oney and Walter Lasecki.</div>
+              <div>Collective Intelligence 2016. <b>Oral Presentation.</b></div>
+              <div>
+                <a href="papers/CI2016.pdf">pdf</a>&nbsp;&middot;&nbsp;
+                <a href="javascript:;" onClick="if
+                        (document.getElementById('ci16-bib').style.display ==
+                        'block') {
+                        document.getElementById('ci16-bib').style.display='none';
+                        } else {
+                        document.getElementById('ci16-bib').style.display='block';
+                        }">
+                  <span style="font-size: large">BibTeX</span>
+                </a>
+                <div id="ci16-bib" style="border-style: inset; background: white; display: none">
+                  <pre>
+@inproceedings{chen2016expert,
+                                title={Expert Crowd Support Systems for Software Developers},
+                                author={CHEN, YAN and ONEY, STEVE and LASECKI, WALTER S},
+                                booktitle={Collective Intelligence},
+                                year={2016}
+                              }</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2016">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/CHI2016WS.pdf">
+                <img class="paperimage img img-responsive" src="files/microproductivity.jpg" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a href="papers/CHI2016WS.pdf">Towards Software Development Microtasks</a>
+              </div>
+              <div><b>Yan Chen</b>, Steve Oney and Walter Lasecki.</div>
+              <div>
+                <a href="http://teevan.org/misc/microproductivity/index.htm">CHI&nbsp;Microproductivity
+                  Workshop&nbsp;2016</a>
+              </div>
+              <div>
+                <a href="papers/CHI2016WS.pdf">pdf</a>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2016">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/MobileHCI14.pdf">
+                <img class="paperimage img img-responsive" src="files/screen_fingerprint.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a href="papers/MobileHCI14.pdf">Toward a Non-Intrusive, Physio-Behavioral Biometric for
+                  Smartphones</a>
+              </div>
+              <div>
+                Esther Vasiete, <b>Yan Chen</b>, Ian Char, Tom Yeh, Vishal
+                Patel, Larry Davis, and Rama Chellappa.
+              </div>
+              <div>Mobile HCI&nbsp;Poster&nbsp;2014</div>
+              <div>
+                <a href="papers/MobileHCI14.pdf">pdf</a>&nbsp;&middot;&nbsp;
+                <a href="http://dl.acm.org/citation.cfm?doid=2628363.2634223">ACM DL</a>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2016">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/itcomputing2013.pdf">
+                <img class="paperimage img img-responsive" src="files/it_professional.jpg" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a href="papers/itcomputing2013.pdf">Screen Fingerprints: a Novel Modality for Active
+                  Authentication.</a>
+              </div>
+              <div>
+                Vishal Patel, Tom Yeh, M Salem, Yangmuzi Zhang, <b>Yan Chen</b>,
+                Rama Chellappa, Larry Davis.
+              </div>
+              <div>IT Professional&nbsp;2013</div>
+              <div>
+                <a href="papers/itcomputing2013.pdf">pdf</a>&nbsp;&middot;&nbsp;
+                <a href="http://ieeexplore.ieee.org/document/6559984/?tp=&arnumber=6559984">IEEE</a>
+              </div>
+            </div>
+          </div>
+          <div class="row paper-row" id="2016">
+            <div class="col-md-3 col-xs-4">
+              <a href="papers/Royal_society_A.pdf">
+                <img class="paperimage img img-responsive" src="files/oscillation.png" />
+              </a>
+            </div>
+            <div class="col-md-9 col-xs-8">
+              <div>
+                <a href="papers/Royal_society_A.pdf">Oscillations in hyperasymptotic series.</a>
+              </div>
+              <div><b>Yan Chen</b>, Harvey Segur</div>
+              <div>
+                Proceedings of the Royal Society of London. Series A,
+                Mathematical and Physical Sciences.
+              </div>
+              <div>
+                <a href="papers/Royal_society_A.pdf">pdf</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br /><br />
+        </div>
+      </details>
+      <!-- lab space -->
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lead" style="margin-bottom: 35px"><b>Lab & School</b></p>
+          <hr>
+        </div>
+        <div class="row" style="flex-wrap: wrap;margin-bottom: 35px">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+              <li data-target="#myCarousel" data-slide-to="4"></li>
+              <li data-target="#myCarousel" data-slide-to="5"></li>
+              <li data-target="#myCarousel" data-slide-to="6"></li>
+              <li data-target="#myCarousel" data-slide-to="7"></li>
+            </ul>
+            <!-- Slides -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/lab_space/1.jpg" alt="Image 1" width="100%" height="auto">
+              </div>
+              <div class="carousel-item">
+                <img src="img/lab_space/2.JPG" alt="Image 2" width="100%" height="auto">
+              </div>
+              <div class="carousel-item">
+                <img src="img/lab_space/3.JPG" alt="Image 3" width="100%" height="auto">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/lab_space/4.JPG" alt="Image 4" width="100%" height="auto">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/lab_space/5.JPG" alt="Image 5" width="100%" height="auto">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/lab_space/6.JPG" alt="Image 6" width="100%" height="auto">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/lab_space/7.JPG" alt="Image 7" width="100%" height="auto">
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/lab_space/8.jpg" alt="Image 8" width="100%" height="auto">
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /container -->
+    <!-- ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
