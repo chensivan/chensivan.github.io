@@ -1,6 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790953767 "/Users/chenyan/Dropbox/dev/chensivan.github.io/cv/yanchen.tex" "yanchen.pdf" "yanchen" 1790953767 0
-  "/Users/chenyan/Dropbox/dev/chensivan.github.io/cv/yanchen.tex" 1790953766 35486 98bbb922869286e437122b1ac3c75fc1 ""
+["pdflatex"] 1794615561 "yanchen.tex" "yanchen.pdf" "yanchen" 1794615562 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
@@ -58,6 +57,9 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/fmtcount/fcnumparser.sty" 1580337424 12389 43a81443714469abac77ce09f44ad2e2 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/fmtcount/fcprefix.sty" 1580337424 12098 5c732241af77b5f0e56e640b7d538395 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/fmtcount/fmtcount.sty" 1582668197 30872 ed70d543c537f19c96fc753321f1c3cc ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic-helper.sty" 1651520503 1796 6d3390e7a3f2a0f63ce89532aa30ac20 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping.def" 1651520503 107808 07e47606922c76b1824e149c54155c4c ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty" 1651520503 8112 16dbb19fca3f2df864fea49874356f35 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def" 1663965824 19448 1e988b341dda20961a6b931bcde55519 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/color.sty" 1654720880 7233 e46ce9241d2b2ca2a78155475fdd557a ""
@@ -72,6 +74,9 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty" 1655478651 22555 6d8e155cfef6d82c3d5c742fea7c992e ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty" 1665067230 13815 760b0c02f691ea230f5359c4e1de23a7 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1673989714 30429 213676d4c7327a21d91ddaed900e7b81 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty" 1677186603 6107 5cfea8a675c58918b8c04be10261e48c ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty" 1675461949 4674 257c150d9d5c2fbc229303c8beaf6228 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1675461949 6812 3c152a1c8d562d7b7291c4839b61a5c3 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty" 1575499565 5766 13a9e8766c47f30327caf893ece86ac8 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/mmap/mmap.sty" 1220828353 12598 9798dff0da2fdc9ce8e74926e7bede36 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/mmap/omlmit-m.cmap" 1215649417 3655 c6887c3497778565581a10a56edfacdf ""
@@ -79,6 +84,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/mmap/omx-m.cmap" 1215649417 7601 04e8d86f5997c60e8aef3442b744717f ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/mmap/ot1rmn-m.cmap" 1220828353 5163 ad085ee2e77229986d2479b47db62bd1 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/mmap/t1-m.cmap" 1215649417 4912 125f27d0f5a296a042a603f611559b6d ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/needspace/needspace.sty" 1364856750 852 0e34dbb72efc69fa07602405ad95585e ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/preprint/fullpage.sty" 1137110595 2789 05b418f78b224ec872f5b11081138605 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty" 1576624809 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657483315 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
@@ -92,7 +98,7 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "res.cls" 1332904920 25109 4aaddbc00695c74cbaf6137679c86a6e ""
   "yanchen.aux" 1770480125 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "yanchen.tex" 1790953766 35486 98bbb922869286e437122b1ac3c75fc1 ""
+  "yanchen.tex" 1794615555 36706 adab5fccf3890ac1e29612ab3a151427 ""
   (generated)
   "yanchen.aux"
   "yanchen.log"
